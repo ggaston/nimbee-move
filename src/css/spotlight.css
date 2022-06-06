@@ -1,0 +1,17 @@
+:root {
+    --spotlight-x: 200px;
+    --spotlight-y: 200px;
+  }
+
+.overlay {
+    display: block;
+    min-width: 800px;
+    min-height: 600px;
+    width: auto;
+    height: 100%;
+    background-image: radial-gradient(
+        circle at var(--spotlight-x) var(--spotlight-y), 
+        #06121722 100px, 
+        #061217cc 300px
+    );
+}
