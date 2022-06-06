@@ -1,0 +1,51 @@
+.spot-container {
+    position: absolute;
+    max-width: 1680px;
+    max-height: 980px;
+    height: 980px;
+    width: 1680px;
+    background-color: #ff000022;
+}
+
+.spot {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+}
+
+#spot-truck {
+    top: 35%;
+    left: 7%;
+}
+
+#spot-cargo {
+    top: 35%;
+    left: 7%;
+}
+
+#spot-driver {
+    top: 35%;
+    left: 7%;
+}
+
+#spot-app {
+    top: 35%;
+    left: 7%;
+}
+
+#spot-battery {
+    top: 35%;
+    left: 7%;
+}
+
+#spot-ev {
+    top: 35%;
+    left: 7%;
+}
+
+#spot-request {
+    top: 35%;
+    left: 7%;
+}

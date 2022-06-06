@@ -1,9 +1,9 @@
 @import url(scene.css);
-@import url(point.css);
+@import url(spot.css);
 
 /* variables */
 :root {
-    --img-size-x: 1680px; 
-    --img-size-y: 980px;
+    --scene-size-x: 100vw; 
+    --scene-size-y: 100vh;
     --color-blue: #40b6e6;
 }

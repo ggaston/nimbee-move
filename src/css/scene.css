@@ -28,13 +28,13 @@ body {
 .scene {
     position: absolute;
     display: block;
-    z-index: 2;
-    width: var(--img-size-x);
-    height: var(--img-size-y);
-    transform: translate(calc(50vw - var(--img-size-x)/2), calc(50vh - var(--img-size-y)/2));
+    width: var(--scene-size-x);
+    height: var(--scene-size-y);
+    transform: translate(calc(50vw - var(--scene-size-x)/2), calc(50vh - var(--scene-size-y)/2));
     background-image: url("../assets/img/bg.jpg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    background-size: cover;
     box-shadow: 1px 0 30px #00000066;
     overflow: hidden;
 }

@@ -8,11 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container">
-    <div class="scene" id="overlay">
-        <div class="point" id="truck"></div>
+<div class="container">  
+    <div class="scene" id="overlay"></div>
+    <!-- spot-container emulates 'background-size: cover' behavior --> 
+    <div class="spot-container" id="spot-container">
+        <div class="spot" id="spot-truck"></div>
+        <div class="spot" id="spot-cargo"></div>
+        <div class="spot" id="spot-driver"></div>
+        <div class="spot" id="spot-app"></div>
+        <div class="spot" id="spot-ev"></div>
+        <div class="spot" id="spot-battery"></div>
+        <div class="spot" id="spot-request"></div>
     </div>
 </div>
+<script src="js/spot-container.js"></script>
     
 </body>
 </html>
