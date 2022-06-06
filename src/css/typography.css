@@ -1,0 +1,10 @@
+@import url(fonts.css);
+
+body {
+    font-family: Poppins, sans-serif;
+}
+
+h1 {
+    color: var(--text-color-light);
+    white-space: nowrap;
+}

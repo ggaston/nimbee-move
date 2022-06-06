@@ -4,6 +4,7 @@
     max-height: 980px;
     height: 980px;
     width: 1680px;
+    bottom: 0;
 }
 
 .spot {
@@ -22,10 +23,11 @@
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
     animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
     color: var(--color-blue-light);
-    color:
+    transition: background-color 1.5s;
 }
 
-.spot-dot:hover {
+.spot-dot:hover,
+.active .spot-dot {
     -webkit-animation: none;
     -moz-animation: none;
     animation: none;
@@ -41,7 +43,8 @@
     height: 24px;
 }
 
-.spot-dot:hover .spot-icon {
+.spot-dot:hover .spot-icon,
+.active .spot-icon {
     filter: brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(645%) hue-rotate(165deg) brightness(95%) contrast(90%);
 }
 
@@ -52,36 +55,36 @@
   }
 
 #spot-truck {
-    top: 41%;
+    bottom: 51%;
     left: 7%;
 }
 
 #spot-cargo {
-    top: 52%;
+    bottom: 40%;
     left: 21%;
 }
 
 #spot-driver {
-    top: 60%;
+    bottom: 32%;
     left: 35.5%;
 }
 
 #spot-app {
-    top: 67%;
+    bottom: 26%;
     left: 41%;
 }
 
 #spot-battery {
-    top: 65%;
+    bottom:28%;
     left: 50.5%;
 }
 
 #spot-ev {
-    top: 67%;
+    bottom: 26%;
     left: 69%;
 }
 
 #spot-request {
-    top: 50.5%;
+    bottom: 42.5%;
     left: 39%;
 }

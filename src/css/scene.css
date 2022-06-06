@@ -34,7 +34,7 @@ body {
     transform: translate(calc(50vw - var(--scene-size-x)/2), calc(50vh - var(--scene-size-y)/2));
     background-image: url("../assets/img/bg.jpg");
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 50% bottom;
     background-size: cover;
     box-shadow: 1px 0 30px #00000066;
     overflow: hidden;

@@ -18,7 +18,8 @@ function spots() {
 
     spotContainerEl.style.width = newImageWidth + 'px'
     spotContainerEl.style.height = newImageHeight + 'px'
-    spotContainerEl.style.transform = `translate(-${offestX}px, -${offestY}px)`
+    //TODO: not working if container is smaller then viewport
+    spotContainerEl.style.transform = `translateX(-${offestX}px)`
 
 
     const log = {

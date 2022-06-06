@@ -1,0 +1,57 @@
+.popper {
+    position: absolute;
+    top: -400px;
+    /* left: 500px; */
+    opacity: 0;
+    z-index: var(--z-index-popper);
+    backdrop-filter: blur(20px);
+    background-color: var(--color-black-transparent);
+    border-radius: 16px;
+    color: var(--text-color-light);
+    transition: all ease-in-out 1s;
+
+}
+
+.popper.visible {
+    top: 120px;
+    left: 500px;
+    opacity: 1;
+}
+
+.popper-content {
+    min-width: 200px;
+    width: 280px;
+    padding: 25px;
+    font-size: var(--text-size-sm);
+    font-weight: 300;
+}
+
+.popper-headline-icon {
+    float: left;
+    filter: brightness(0) saturate(100%) invert(90%) sepia(24%) saturate(5533%) hue-rotate(356deg) brightness(102%) contrast(102%);
+}
+.popper-headline-text {
+    display: block;
+    margin-left: 40px;
+    font-weight: 300;
+    font-size: var(--text-size-md)
+}
+
+.popper-features {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.popper-feature {
+    margin-bottom: .75rem;
+}
+.popper-feature-icon {
+    float: left;
+}
+
+.popper-feature-text {
+    display: block;
+    margin-left: 40px;
+}
+

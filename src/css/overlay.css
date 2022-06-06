@@ -4,6 +4,8 @@
   }
 
 .overlay {
+    position: relative;
+    z-index: var(--z-index-overlay);
     display: block;
     min-width: 800px;
     min-height: 600px;

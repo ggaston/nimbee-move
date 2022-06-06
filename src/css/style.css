@@ -1,11 +1,39 @@
+@import url(typography.css);
+@import url(content.css);
 @import url(scene.css);
+@import url(spotlight.css);
 @import url(spot.css);
+@import url(button.css);
+@import url(pagination.css);
+@import url(header.css);
+@import url(popper.css);
 
 /* variables */
 :root {
     --scene-size-x: 100vw; 
     --scene-size-y: 100vh;
+
     --color-blue: #40b6e6;
     --color-white: #fff;
-    --color-blue-light: #ECF8FD; 
+    --color-blue-light: #ECF8FD;
+    --color-black-light: #061217;
+    --color-black-transparent: #06121755;
+
+    --color-primary: var(--color-blue);
+    --color-highlight: var(--color-white);
+    --color-header-bg: var(--color-black-light);
+
+    --text-color-light: var(--color-blue-light);
+    --text-color-highlight: var(--color-blue);
+
+    --text-size-sm: .85rem;
+    --text-size-md: 1rem;
+    --text-size-lg: 1.5rem;
+    --text-size-xxl: 4.5rem;
+
+    --z-index-spots: 1;
+    --z-index-content: 5;
+    --z-index-popper: 2;
+    --z-index-header: 3;
+    --z-index-spotlight: 4;
 }

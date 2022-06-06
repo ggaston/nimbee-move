@@ -1,9 +1,11 @@
 :root {
-    --spotlight-x: 200px;
-    --spotlight-y: 200px;
+    --spotlight-x: 11%;
+    --spotlight-y: 30%;
   }
 
-.overlay {
+.spotlight {
+    position: relative;
+    z-index: var(--z-index-spotlight);
     display: block;
     min-width: 800px;
     min-height: 600px;
