@@ -1,9 +1,3 @@
-:root {
-    --img-size-x: 1680px; 
-    --img-size-y: 980px;
-}
-
-
 html,
 body {
     min-height: 100%;

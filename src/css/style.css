@@ -1,2 +1,9 @@
-@import url(./layout.css);
-@import url(./spotlight.css);
+@import url(scene.css);
+@import url(point.css);
+
+/* variables */
+:root {
+    --img-size-x: 1680px; 
+    --img-size-y: 980px;
+    --color-blue: #40b6e6;
+}
