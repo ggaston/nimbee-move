@@ -23,8 +23,15 @@
       <!-- /header -->
 
       <div class="scene"></div>
-      <div class="spotlight" id="spotlight"></div>
+      
+      <!-- static overlay -->
+      <div class="overlay" id="overlay"></div>
+      <!-- /static overlay -->
 
+      <!-- animated spotlight -->
+      <div class="spotlight" id="spotlight"></div>
+      <!-- /animated spotlight -->
+      
       <!-- spot-container emulates 'background-size: cover' behavior -->
       <div class="spot-container" id="spot-container">
         <div
@@ -58,7 +65,7 @@
           </div>
         </div>
         <div
-          class="spot"
+          class="spot active"
           id="spot-app"
           data-behavior="popper-open"
           data-target="popper-app"

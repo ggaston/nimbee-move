@@ -7,4 +7,6 @@ body {
 h1 {
     color: var(--text-color-light);
     white-space: nowrap;
+    font-weight: 600;
+    font-size: var(--text-size-lg);
 }

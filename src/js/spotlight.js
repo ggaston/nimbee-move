@@ -7,6 +7,33 @@ document.documentElement.dataset.mode = "spotlight";
 
 spotlight
   .to("#spotlight", {
+    "--spotlight-x": "38%",
+    "--spotlight-y": "52%",
+    duration: 1,
+    delay: 4,
+    onStart: () => {
+      onStartEffects('spot-app', 'spot-driver', 500)
+    },
+  })
+  .to("#spotlight", {
+    "--spotlight-x": "24%",
+    "--spotlight-y": "35%",
+    duration: 1,
+    delay: 4,
+    onStart: () => {
+      onStartEffects('spot-driver', 'spot-cargo', 500)
+    },
+  })
+  .to("#spotlight", {
+    "--spotlight-x": "11%",
+    "--spotlight-y": "30%",
+    duration: 2,
+    delay: 4,
+    onStart: () => {
+      onStartEffects('spot-cargo', 'spot-truck', 1500)
+    },
+  })
+  .to("#spotlight", {
     "--spotlight-x": "41%",
     "--spotlight-y": "40%",
     duration: 2,
@@ -36,39 +63,13 @@ spotlight
   .to("#spotlight", {
     "--spotlight-x": "46%",
     "--spotlight-y": "62%",
-    duration: 0.5,
-    delay: 4,
-    onStart: () => {
-      onStartEffects('spot-battery', 'spot-app', 250)
-    },
-  })
-  .to("#spotlight", {
-    "--spotlight-x": "38%",
-    "--spotlight-y": "52%",
-    duration: 0.5,
-    delay: 4,
-    onStart: () => {
-      onStartEffects('spot-app', 'spot-driver', 250)
-    },
-  })
-  .to("#spotlight", {
-    "--spotlight-x": "24%",
-    "--spotlight-y": "35%",
     duration: 1,
     delay: 4,
     onStart: () => {
-      onStartEffects('spot-driver', 'spot-cargo', 500)
+      onStartEffects('spot-battery', 'spot-app', 500)
     },
   })
-  .to("#spotlight", {
-    "--spotlight-x": "11%",
-    "--spotlight-y": "30%",
-    duration: 2,
-    delay: 4,
-    onStart: () => {
-      onStartEffects('spot-cargo', 'spot-truck', 2000)
-    },
-  })
+  
 
 window.addEventListener("mousemove", resetTimeout);
 window.addEventListener("click", resetTimeout);

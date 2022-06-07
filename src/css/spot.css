@@ -1,5 +1,6 @@
 .spot-container {
   position: absolute;
+  z-index: var(--z-index-spots);
   max-width: 1680px;
   max-height: 980px;
   height: 980px;
@@ -27,7 +28,7 @@
 }
 
 .spot-dot:hover,
-.active .spot-dot {
+.spot.active .spot-dot {
   -webkit-animation: none;
   -moz-animation: none;
   animation: none;
@@ -50,7 +51,7 @@
 }
 
 .spot-dot:hover .spot-icon,
-.active .spot-icon {
+.spot.active .spot-icon {
   filter: brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(645%)
     hue-rotate(165deg) brightness(95%) contrast(90%);
 }

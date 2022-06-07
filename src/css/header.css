@@ -1,6 +1,6 @@
 .header {
    position: absolute;
-   z-index: 3;
+   z-index: var(--z-index-header);
    width: 100%;
    background-color: var(--color-header-bg);
    
@@ -10,8 +10,9 @@
     float: right;
     margin: 0;
     padding:0 45px 0 0; 
-    line-height: 70px;
+    line-height: 72px;
     font-size: var(--text-size-md);
     color: var(--text-color-light);
     font-weight: 400;
+    white-space: nowrap;
 }

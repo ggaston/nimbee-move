@@ -1,3 +1,4 @@
+@import url(fonts.css);
 @import url(typography.css);
 @import url(content.css);
 @import url(scene.css);
@@ -7,6 +8,7 @@
 @import url(pagination.css);
 @import url(header.css);
 @import url(popper.css);
+@import url(overlay.css);
 
 /* variables */
 :root {
@@ -26,14 +28,15 @@
     --text-color-light: var(--color-blue-light);
     --text-color-highlight: var(--color-blue);
 
-    --text-size-sm: .85rem;
-    --text-size-md: 1rem;
-    --text-size-lg: 1.5rem;
+    --text-size-sm: .75rem;
+    --text-size-md: .875rem;
+    --text-size-lg: 1.4rem;
     --text-size-xxl: 4.5rem;
 
-    --z-index-spots: 1;
+    --z-index-spots: 2;
     --z-index-content: 5;
-    --z-index-popper: 2;
-    --z-index-header: 3;
+    --z-index-popper: 6;
+    --z-index-header: 7;
     --z-index-spotlight: 4;
+    --z-index-overlay: 1;
 }
