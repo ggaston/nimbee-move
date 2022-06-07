@@ -71,7 +71,6 @@ window.addEventListener("mousemove", (evt) => {
     console.log("opacity: " + spotlightEl.style.opacity);
     if (spotlightEl.style.opacity === "0") {
       spotlightEl.style.zIndex = -1;
-      //spotlightEl.style.display = 'none';
     }
   };
 
@@ -86,6 +85,14 @@ function trackMouse() {
     timeout = setTimeout(() => {
       spotlightEl.style.zIndex = 4;
       spotlightEl.style.opacity = 1;
+
+      // Hide open poppers
+      let openPoppers = document.querySelectorAll(".popper.is-visible");
+      openPoppers.forEach((el) => {
+        const target = document.querySelector('[data-target="' + el.id + '"]');
+        hidePopper(null, target);
+      });
+
       timeline.resume();
       timeout = null;
 

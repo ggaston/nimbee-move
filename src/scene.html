@@ -24,40 +24,75 @@
 
       <div class="scene"></div>
       <div class="spotlight" id="spotlight"></div>
-      
+
       <!-- spot-container emulates 'background-size: cover' behavior -->
       <div class="spot-container" id="spot-container">
-        <div class="spot" id="spot-truck" data-behavior="popper-open" data-target="popper-truck">
+        <div
+          class="spot"
+          id="spot-truck"
+          data-behavior="popper-open"
+          data-target="popper-truck"
+        >
           <div class="spot-dot">
             <img src="assets/img/spot-truck.svg" alt="" class="spot-icon" />
           </div>
         </div>
-        <div class="spot" id="spot-cargo" data-behavior="popper-open" data-target="popper-cargo">
+        <div
+          class="spot"
+          id="spot-cargo"
+          data-behavior="popper-open"
+          data-target="popper-cargo"
+        >
           <div class="spot-dot">
             <img src="assets/img/spot-cargo.svg" alt="" class="spot-icon" />
           </div>
         </div>
-        <div class="spot" id="spot-driver" data-behavior="popper-open" data-target="popper-driver">
+        <div
+          class="spot"
+          id="spot-driver"
+          data-behavior="popper-open"
+          data-target="popper-driver"
+        >
           <div class="spot-dot">
             <img src="assets/img/spot-driver.svg" alt="" class="spot-icon" />
           </div>
         </div>
-        <div class="spot" id="spot-app" data-behavior="popper-open" data-target="popper-app">
+        <div
+          class="spot"
+          id="spot-app"
+          data-behavior="popper-open"
+          data-target="popper-app"
+        >
           <div class="spot-dot">
             <img src="assets/img/spot-app.svg" alt="" class="spot-icon" />
           </div>
         </div>
-        <div class="spot" id="spot-ev" data-behavior="popper-open" data-target="popper-ev">
+        <div
+          class="spot"
+          id="spot-ev"
+          data-behavior="popper-open"
+          data-target="popper-ev"
+        >
           <div class="spot-dot">
             <img src="assets/img/spot-ev.svg" alt="" class="spot-icon" />
           </div>
         </div>
-        <div class="spot" id="spot-battery" data-behavior="popper-open" data-target="popper-battery">
+        <div
+          class="spot"
+          id="spot-battery"
+          data-behavior="popper-open"
+          data-target="popper-battery"
+        >
           <div class="spot-dot">
             <img src="assets/img/spot-battery.svg" alt="" class="spot-icon" />
           </div>
         </div>
-        <div class="spot" id="spot-request" data-behavior="popper-open" data-target="popper-request">
+        <div
+          class="spot"
+          id="spot-request"
+          data-behavior="popper-open"
+          data-target="popper-request"
+        >
           <div class="spot-dot">
             <img src="assets/img/spot-request.svg" alt="" class="spot-icon" />
           </div>
@@ -70,23 +105,80 @@
         <h1>Keeping EVs charged, anytime and anywhere</h1>
         <!-- /content -->
         <!-- button -->.
-        <button class="button button-primary">Walk me through</button>
+        <button class="button button-primary button-with-icon">Walk me through <img src="assets/img/icon-btn-arrow.svg" class="button-icon-right" alt=""></button>
         <!-- /button -->
         <!-- pagination -->
         <div class="pagination">
           <div
             class="pagination-control control-prev"
             data-behavior="pagination-control-prev"
-          ></div>
-          <ul>
+          >
+            <img src="assets/img/icon-btn-arrow-back.svg" alt="" />
+          </div>
+          <ul class="pagination-items">
             <li class="pagination-item">
-              <a href="#" class="pagination-link"></a>
+              <a
+                href="#"
+                class="pagination-link"
+                data-behavior="pagination"
+                data-target="spot-truck"
+              ></a>
+            </li>
+            <li class="pagination-item">
+              <a
+                href="#"
+                class="pagination-link"
+                data-behavior="pagination"
+                data-target="spot-cargo"
+              ></a>
+            </li>
+            <li class="pagination-item">
+              <a
+                href="#"
+                class="pagination-link"
+                data-behavior="pagination"
+                data-target="spot-driver"
+              ></a>
+            </li>
+            <li class="pagination-item">
+              <a
+                href="#"
+                class="pagination-link"
+                data-behavior="pagination"
+                data-target="spot-app"
+              ></a>
+            </li>
+            <li class="pagination-item">
+              <a
+                href="#"
+                class="pagination-link"
+                data-behavior="pagination"
+                data-target="spot-request"
+              ></a>
+            </li>
+            <li class="pagination-item">
+              <a
+                href="#"
+                class="pagination-link"
+                data-behavior="pagination"
+                data-target="spot-battery"
+              ></a>
+            </li>
+            <li class="pagination-item">
+              <a
+                href="#"
+                class="pagination-link"
+                data-behavior="pagination"
+                data-target="spot-ev"
+              ></a>
             </li>
           </ul>
           <div
             class="pagination-control control-next"
             data-behavior="pagination-control-next"
-          ></div>
+          >
+            <img src="assets/img/icon-btn-arrow.svg" alt="" />
+          </div>
         </div>
         <!-- /pagination -->
       </main>
@@ -98,8 +190,14 @@
       <div class="popper" id="popper-truck">
         <div class="popper-content">
           <h4 class="popper-headline">
-           <img src="assets/img/spot-battery.svg" alt="" class="popper-headline-icon"> 
-           <span class="popper-headline-text">Assigned charging unit pairing with vehicle</span>
+            <img
+              src="assets/img/spot-battery.svg"
+              alt=""
+              class="popper-headline-icon"
+            />
+            <span class="popper-headline-text"
+              >Assigned charging unit pairing with vehicle</span
+            >
           </h4>
           <ul class="popper-features">
             <li class="popper-feature">
@@ -108,7 +206,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">vehicle identification & digital handshake</span>
+              <span class="popper-feature-text"
+                >vehicle identification & digital handshake</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -116,7 +216,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">sets the charging curve based on the vehicle’s charging profile
+              <span class="popper-feature-text"
+                >sets the charging curve based on the vehicle’s charging profile
                 and initial SoC</span
               >
             </li>
@@ -126,7 +227,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">pouští náboj dle instrukcí z objednávky</span>
+              <span class="popper-feature-text"
+                >pouští náboj dle instrukcí z objednávky</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -134,7 +237,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">will monitors the process and it specifies the estimated
+              <span class="popper-feature-text"
+                >will monitors the process and it specifies the estimated
                 charging completion</span
               >
             </li>
@@ -147,8 +251,14 @@
       <div class="popper" id="popper-cargo">
         <div class="popper-content">
           <h4 class="popper-headline">
-           <img src="assets/img/spot-battery.svg" alt="" class="popper-headline-icon"> 
-           <span class="popper-headline-text">Assigned charging unit pairing with vehicle</span>
+            <img
+              src="assets/img/spot-battery.svg"
+              alt=""
+              class="popper-headline-icon"
+            />
+            <span class="popper-headline-text"
+              >Assigned charging unit pairing with vehicle</span
+            >
           </h4>
           <ul class="popper-features">
             <li class="popper-feature">
@@ -157,7 +267,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">vehicle identification & digital handshake</span>
+              <span class="popper-feature-text"
+                >vehicle identification & digital handshake</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -165,7 +277,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">sets the charging curve based on the vehicle’s charging profile
+              <span class="popper-feature-text"
+                >sets the charging curve based on the vehicle’s charging profile
                 and initial SoC</span
               >
             </li>
@@ -175,7 +288,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">pouští náboj dle instrukcí z objednávky</span>
+              <span class="popper-feature-text"
+                >pouští náboj dle instrukcí z objednávky</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -183,7 +298,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">will monitors the process and it specifies the estimated
+              <span class="popper-feature-text"
+                >will monitors the process and it specifies the estimated
                 charging completion</span
               >
             </li>
@@ -196,8 +312,14 @@
       <div class="popper" id="popper-driver">
         <div class="popper-content">
           <h4 class="popper-headline">
-           <img src="assets/img/spot-battery.svg" alt="" class="popper-headline-icon"> 
-           <span class="popper-headline-text">Assigned charging unit pairing with vehicle</span>
+            <img
+              src="assets/img/spot-battery.svg"
+              alt=""
+              class="popper-headline-icon"
+            />
+            <span class="popper-headline-text"
+              >Assigned charging unit pairing with vehicle</span
+            >
           </h4>
           <ul class="popper-features">
             <li class="popper-feature">
@@ -206,7 +328,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">vehicle identification & digital handshake</span>
+              <span class="popper-feature-text"
+                >vehicle identification & digital handshake</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -214,7 +338,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">sets the charging curve based on the vehicle’s charging profile
+              <span class="popper-feature-text"
+                >sets the charging curve based on the vehicle’s charging profile
                 and initial SoC</span
               >
             </li>
@@ -224,7 +349,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">pouští náboj dle instrukcí z objednávky</span>
+              <span class="popper-feature-text"
+                >pouští náboj dle instrukcí z objednávky</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -232,7 +359,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">will monitors the process and it specifies the estimated
+              <span class="popper-feature-text"
+                >will monitors the process and it specifies the estimated
                 charging completion</span
               >
             </li>
@@ -245,8 +373,14 @@
       <div class="popper" id="popper-app">
         <div class="popper-content">
           <h4 class="popper-headline">
-           <img src="assets/img/spot-battery.svg" alt="" class="popper-headline-icon"> 
-           <span class="popper-headline-text">Assigned charging unit pairing with vehicle</span>
+            <img
+              src="assets/img/spot-battery.svg"
+              alt=""
+              class="popper-headline-icon"
+            />
+            <span class="popper-headline-text"
+              >Assigned charging unit pairing with vehicle</span
+            >
           </h4>
           <ul class="popper-features">
             <li class="popper-feature">
@@ -255,7 +389,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">vehicle identification & digital handshake</span>
+              <span class="popper-feature-text"
+                >vehicle identification & digital handshake</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -263,7 +399,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">sets the charging curve based on the vehicle’s charging profile
+              <span class="popper-feature-text"
+                >sets the charging curve based on the vehicle’s charging profile
                 and initial SoC</span
               >
             </li>
@@ -273,7 +410,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">pouští náboj dle instrukcí z objednávky</span>
+              <span class="popper-feature-text"
+                >pouští náboj dle instrukcí z objednávky</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -281,7 +420,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">will monitors the process and it specifies the estimated
+              <span class="popper-feature-text"
+                >will monitors the process and it specifies the estimated
                 charging completion</span
               >
             </li>
@@ -294,8 +434,14 @@
       <div class="popper" id="popper-request">
         <div class="popper-content">
           <h4 class="popper-headline">
-           <img src="assets/img/spot-battery.svg" alt="" class="popper-headline-icon"> 
-           <span class="popper-headline-text">Assigned charging unit pairing with vehicle</span>
+            <img
+              src="assets/img/spot-battery.svg"
+              alt=""
+              class="popper-headline-icon"
+            />
+            <span class="popper-headline-text"
+              >Assigned charging unit pairing with vehicle</span
+            >
           </h4>
           <ul class="popper-features">
             <li class="popper-feature">
@@ -304,7 +450,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">vehicle identification & digital handshake</span>
+              <span class="popper-feature-text"
+                >vehicle identification & digital handshake</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -312,7 +460,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">sets the charging curve based on the vehicle’s charging profile
+              <span class="popper-feature-text"
+                >sets the charging curve based on the vehicle’s charging profile
                 and initial SoC</span
               >
             </li>
@@ -322,7 +471,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">pouští náboj dle instrukcí z objednávky</span>
+              <span class="popper-feature-text"
+                >pouští náboj dle instrukcí z objednávky</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -330,7 +481,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">will monitors the process and it specifies the estimated
+              <span class="popper-feature-text"
+                >will monitors the process and it specifies the estimated
                 charging completion</span
               >
             </li>
@@ -339,13 +491,18 @@
       </div>
       <!-- /popper-request -->
 
-
       <!-- popper-battery -->
       <div class="popper" id="popper-battery">
         <div class="popper-content">
           <h4 class="popper-headline">
-           <img src="assets/img/spot-battery.svg" alt="" class="popper-headline-icon"> 
-           <span class="popper-headline-text">Assigned charging unit pairing with vehicle</span>
+            <img
+              src="assets/img/spot-battery.svg"
+              alt=""
+              class="popper-headline-icon"
+            />
+            <span class="popper-headline-text"
+              >Assigned charging unit pairing with vehicle</span
+            >
           </h4>
           <ul class="popper-features">
             <li class="popper-feature">
@@ -354,7 +511,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">vehicle identification & digital handshake</span>
+              <span class="popper-feature-text"
+                >vehicle identification & digital handshake</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -362,7 +521,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">sets the charging curve based on the vehicle’s charging profile
+              <span class="popper-feature-text"
+                >sets the charging curve based on the vehicle’s charging profile
                 and initial SoC</span
               >
             </li>
@@ -372,7 +532,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">pouští náboj dle instrukcí z objednávky</span>
+              <span class="popper-feature-text"
+                >pouští náboj dle instrukcí z objednávky</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -380,7 +542,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">will monitors the process and it specifies the estimated
+              <span class="popper-feature-text"
+                >will monitors the process and it specifies the estimated
                 charging completion</span
               >
             </li>
@@ -393,8 +556,14 @@
       <div class="popper" id="popper-ev">
         <div class="popper-content">
           <h4 class="popper-headline">
-           <img src="assets/img/spot-battery.svg" alt="" class="popper-headline-icon"> 
-           <span class="popper-headline-text">Assigned charging unit pairing with vehicle</span>
+            <img
+              src="assets/img/spot-battery.svg"
+              alt=""
+              class="popper-headline-icon"
+            />
+            <span class="popper-headline-text"
+              >Assigned charging unit pairing with vehicle</span
+            >
           </h4>
           <ul class="popper-features">
             <li class="popper-feature">
@@ -403,7 +572,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">vehicle identification & digital handshake</span>
+              <span class="popper-feature-text"
+                >vehicle identification & digital handshake</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -411,7 +582,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">sets the charging curve based on the vehicle’s charging profile
+              <span class="popper-feature-text"
+                >sets the charging curve based on the vehicle’s charging profile
                 and initial SoC</span
               >
             </li>
@@ -421,7 +593,9 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">pouští náboj dle instrukcí z objednávky</span>
+              <span class="popper-feature-text"
+                >pouští náboj dle instrukcí z objednávky</span
+              >
             </li>
             <li class="popper-feature">
               <img
@@ -429,7 +603,8 @@
                 alt=""
                 class="popper-feature-icon"
               />
-              <span class="popper-feature-text">will monitors the process and it specifies the estimated
+              <span class="popper-feature-text"
+                >will monitors the process and it specifies the estimated
                 charging completion</span
               >
             </li>
@@ -441,10 +616,10 @@
       <!-- /poppers -->
     </div>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="js/timeline.js"></script>
     <script src="js/spot-container.js"></script>
     <script src="js/spot-events.js"></script>
+    <script src="js/pagination.js"></script>
   </body>
 </html>

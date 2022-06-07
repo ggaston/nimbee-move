@@ -12,7 +12,7 @@
 
 }
 
-.popper.visible {
+.popper.is-visible {
     top: 120px;
     left: 500px;
     opacity: 1;
