@@ -1,90 +1,97 @@
 .spot-container {
-    position: absolute;
-    max-width: 1680px;
-    max-height: 980px;
-    height: 980px;
-    width: 1680px;
-    bottom: 0;
+  position: absolute;
+  max-width: 1680px;
+  max-height: 980px;
+  height: 980px;
+  width: 1680px;
+  bottom: 0;
 }
 
 .spot {
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    cursor: pointer;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
 }
 
 .spot-dot {
-    width: 44px;
-    height: 44px;
-    margin: auto;
-    border-radius: 50%;
-    background-color: var(--color-blue);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
-    color: var(--color-blue-light);
-    transition: background-color 1.5s;
+  width: 44px;
+  height: 44px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: var(--color-blue);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+  color: var(--color-blue-light);
+  transition: background-color 1.5s;
 }
 
 .spot-dot:hover,
 .active .spot-dot {
-    -webkit-animation: none;
-    -moz-animation: none;
-    animation: none;
-    background-color: var(--color-white);
-    color: var(--color-blue);
-  }
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+  background-color: var(--color-white);
+  color: var(--color-blue);
+}
+
+[data-mode="spotlight"] .spot-dot {
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
 
 .spot-icon {
-    display: block;
-    margin: auto;
-    padding: 10px 0;
-    width: 24px;
-    height: 24px;
+  display: block;
+  margin: auto;
+  padding: 10px 0;
+  width: 24px;
+  height: 24px;
 }
 
 .spot-dot:hover .spot-icon,
 .active .spot-icon {
-    filter: brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(645%) hue-rotate(165deg) brightness(95%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(645%)
+    hue-rotate(165deg) brightness(95%) contrast(90%);
 }
 
 @keyframes pulse {
-    to {
-      box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-    }
+  to {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
   }
+}
 
 #spot-truck {
-    bottom: 51%;
-    left: 7%;
+  bottom: 51%;
+  left: 7%;
 }
 
 #spot-cargo {
-    bottom: 40%;
-    left: 21%;
+  bottom: 40%;
+  left: 21%;
 }
 
 #spot-driver {
-    bottom: 32%;
-    left: 35.5%;
+  bottom: 32%;
+  left: 35.5%;
 }
 
 #spot-app {
-    bottom: 26%;
-    left: 41%;
+  bottom: 26%;
+  left: 41%;
 }
 
 #spot-battery {
-    bottom:28%;
-    left: 50.5%;
+  bottom: 28%;
+  left: 50.5%;
 }
 
 #spot-ev {
-    bottom: 26%;
-    left: 69%;
+  bottom: 26%;
+  left: 69%;
 }
 
 #spot-request {
-    bottom: 42.5%;
-    left: 39%;
+  bottom: 42.5%;
+  left: 39%;
 }

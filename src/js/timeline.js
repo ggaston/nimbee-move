@@ -2,6 +2,9 @@ let timeline = gsap.timeline({ repeat: -1 });
 const spotlightEl = document.getElementById("spotlight");
 let timeout;
 
+// Mark <html> data attribute about animation state
+document.documentElement.dataset.mode = "spotlight";
+
 timeline
   .to("#spotlight", {
     "--spotlight-x": "41%",
@@ -47,30 +50,47 @@ timeline
   });
 
 window.addEventListener("mousemove", (evt) => {
-  //TODO: call listener only once
+  // Spotlight dismiss only once
+  if (timeout) {
+    //console.log('mousemove: ' + timeout)
+    clearTimeout(timeout);
+    timeout = null;
+    trackMouse();
+    return;
+  }
+
   const spotEls = document.querySelectorAll(".spot");
   spotEls.forEach((el) => el.classList.remove("active"));
 
-  //Hide spotlight
+  // Mark <html> data attribute about animation state
+  document.documentElement.dataset.mode = "interactive";
+
   spotlightEl.style.opacity = 0;
+  //Hide spotlight
   spotlightEl.ontransitionend = (evt) => {
-      console.log('opacity: ' + spotlightEl.style.opacity)
-      if (spotlightEl.style.opacity === '0' ) {
-          spotlightEl.style.zIndex = -1
-      }
+    console.log("opacity: " + spotlightEl.style.opacity);
+    if (spotlightEl.style.opacity === "0") {
+      spotlightEl.style.zIndex = -1;
+      //spotlightEl.style.display = 'none';
     }
+  };
+
   timeline.pause();
+  //timeline.stop();
   trackMouse();
 });
 
 function trackMouse() {
-    //console.log(timeout)
+  //console.log('timeout: ' + timeout)
   if (!timeout) {
-    timeout = setTimeout((e) => {
-      spotlightEl.style.zIndex = 4
+    timeout = setTimeout(() => {
+      spotlightEl.style.zIndex = 4;
       spotlightEl.style.opacity = 1;
       timeline.resume();
-      timeout = null
+      timeout = null;
+
+      // Mark <html> data attribute about animation state
+      document.documentElement.dataset.mode = "spotlight";
     }, 5000);
   }
 }
