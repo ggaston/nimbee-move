@@ -26,7 +26,9 @@ function showPopper(evt, target) {
     targetEl.classList.add('active')
     popperEl.style.left = rect.left + 64 + 'px'; 
     popperEl.classList.add("is-visible");
-    popperEl.style.top = rect.top - popperEl.clientHeight + 25 + 'px';
+
+    console.log('clamp(calc(10vh + 70px),' + (rect.top - popperEl.clientHeight + 25) + 'px, calc(100vh - ' + (popperEl.clientHeight + 25) +'px))')
+    popperEl.style.top = 'clamp(calc(5vh + 70px),' + (rect.top - popperEl.clientHeight + 25) + 'px, calc(100vh - ' + (popperEl.clientHeight + 25) +'px))';
   }
 }
 
@@ -38,6 +40,9 @@ function hidePopper(evt, target) {
     targetEl.dataset.behavior === "popper-open" &&
     targetEl.dataset.target
   ) {
+    // Remove pagination highlight
+    pages.highlight(null)
+
     targetEl.classList.remove('active')
     popperEl = document.getElementById(targetEl.dataset.target);
     popperEl.style.top = '-400px'
