@@ -1,0 +1,40 @@
+.button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+}
+
+.button:focus {
+    transform: translate(0, 1px);
+}
+
+.button:hover,
+.button.active {
+    background-color: var(--color-highlight);
+    color: var(--text-color-highlight); 
+}
+
+.button-primary {
+    background-color: var(--color-primary);
+    color: var(--text-color-light);
+    font-size: var(--text-size-md);
+}
+
+/* with icon */
+
+.button-with-icon {
+    padding: 12px 25px
+}
+
+.button-icon-right {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateX(5px);
+}
+
+.button:hover .button-icon-right,
+.button.active .button-icon-right {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(645%)
+    hue-rotate(165deg) brightness(95%) contrast(90%);
+}

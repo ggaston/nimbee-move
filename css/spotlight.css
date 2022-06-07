@@ -1,0 +1,21 @@
+:root {
+    --spotlight-x: 46%;
+    --spotlight-y: 62%;
+  }
+
+.spotlight {
+    position: relative;
+    z-index: var(--z-index-spotlight);
+    opacity: 1;
+    display: block;
+    min-width: 800px;
+    min-height: 600px;
+    width: auto;
+    height: 100%;
+    background-image: radial-gradient(
+        circle at var(--spotlight-x) var(--spotlight-y), 
+        #06121700 100px, 
+        #061217cc 300px
+    );
+    transition: opacity 1s;
+}

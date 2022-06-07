@@ -1,0 +1,41 @@
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color:rgb(105, 96, 80);
+    background-image:
+    radial-gradient(at 40% 20%, rgb(57, 63, 36) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(33,32%,38%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(266,3%,33%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgb(191, 196, 175) 0px, transparent 50%),
+    radial-gradient(at 0% 99%, hsla(340,5%,23%,1) 0px, transparent 50%),
+    radial-gradient(at 78% 100%, rgb(50, 39, 36) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(74,25%,17%,1) 0px, transparent 50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-blue);
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scene {
+    position: absolute;
+    display: block;
+    width: var(--scene-size-x);
+    height: var(--scene-size-y);
+    transform: translate(calc(50vw - var(--scene-size-x)/2), calc(50vh - var(--scene-size-y)/2));
+    background-image: url("../assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% bottom;
+    background-size: cover;
+    box-shadow: 1px 0 30px #00000066;
+    overflow: hidden;
+}
