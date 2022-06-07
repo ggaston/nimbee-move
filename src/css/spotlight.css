@@ -6,6 +6,7 @@
 .spotlight {
     position: relative;
     z-index: var(--z-index-spotlight);
+    opacity: 1;
     display: block;
     min-width: 800px;
     min-height: 600px;
@@ -16,4 +17,5 @@
         #06121722 100px, 
         #061217cc 300px
     );
+    transition: opacity 1s;
 }
