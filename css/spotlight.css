@@ -3,6 +3,10 @@
     --spotlight-y: 62%;
   }
 
+[data-mode="interactive"] .spotlight {
+    z-index: 0 !important; 
+}
+
 .spotlight {
     position: relative;
     z-index: var(--z-index-spotlight);
