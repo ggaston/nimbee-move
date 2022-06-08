@@ -39,7 +39,8 @@
   color: var(--color-blue);
 }
 
-[data-mode="spotlight"] .spot-dot {
+[data-mode~="spotlight"] .spot-dot,
+[data-mode~="hasPopper"] .spot-dot {
   -webkit-animation: none;
   -moz-animation: none;
   animation: none;
@@ -66,12 +67,12 @@
 }
 
 #spot-truck {
-  bottom: 51%;
-  left: 7%;
+  bottom: 41%;
+  left: 8%;
 }
 
 #spot-cargo {
-  bottom: 40%;
+  bottom: 35%;
   left: 21%;
 }
 
