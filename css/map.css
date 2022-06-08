@@ -2,11 +2,16 @@
     position: absolute;
     top: 100px;
     right: 100px;
+    width: 174px;
+    height: 174px;
+    overflow: hidden;
+    border-radius: 100rem;
+    border: 1px solid var(--color-blue-light);
 }
 
 .map-dot {
     position: absolute;
-    top: 43%;
+    top: 45%;
     left: 50%;
     width: 10px;
     height: 10px;
