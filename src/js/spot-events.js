@@ -9,7 +9,7 @@ spotEls.forEach((element) => {
 	// Set initial position of poppers
 	requestAnimationFrame(() => {
 		const popperEl = document.getElementById(element.dataset.target);
-		popperEl.style.top = element.offsetTop - 290 + 'px';
+		popperEl.style.top = element.offsetTop - 320 + 'px';
 		//console.log(element.offsetTop, element)
 	});
 });
@@ -76,7 +76,7 @@ function hidePopper(evt, target) {
 			// On transition end make it invisible, remove from display and set original top position
 			transitionTimeout = setTimeout(() => {
 				popperEl.classList.remove('is-block');
-				popperEl.style.top = targetEl.offsetTop - 290 + 'px';
+				popperEl.style.top = targetEl.offsetTop - 320 + 'px';
 			}, 200);
 
 
