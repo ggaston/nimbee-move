@@ -25,6 +25,11 @@
   transition: background-color 1.5s;
 }
 
+.spot:hover,
+.spot.active {
+  z-index: var(--z-index-spot);
+}
+
 .spot-dot:hover,
 .spot.active .spot-dot {
   -webkit-animation: none;

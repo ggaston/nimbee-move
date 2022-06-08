@@ -1,7 +1,8 @@
 .popper {
     position: absolute;
-    top: -400px;
+    top: -200px;
     /* left: 500px; */
+    display: none;
     opacity: 0;
     z-index: var(--z-index-popper);
     -webkit-backdrop-filter: blur(20px);
@@ -9,12 +10,14 @@
     background-color: var(--color-black-transparent);
     border-radius: 16px;
     color: var(--text-color-light);
-    transition: all ease-in-out 1s;
+    transition: all ease-out .5s;
+}
+
+.popper.is-block {
+    display: block;
 }
 
 .popper.is-visible {
-    top: 120px;
-    left: 500px;
     opacity: 1;
 }
 

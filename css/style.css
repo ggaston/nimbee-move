@@ -4,7 +4,6 @@
 @import url(scene.css);
 @import url(spotlight.css);
 @import url(spot.css);
-@import url(button.css);
 @import url(pagination.css);
 @import url(header.css);
 @import url(popper.css);
@@ -35,6 +34,7 @@
     --text-size-xxl: 4.5rem;
 
     --z-index-spots: 2;
+    --z-index-spot: 10; /* spots over popper */
     --z-index-content: 5;
     --z-index-popper: 6;
     --z-index-header: 7;
