@@ -128,7 +128,7 @@ function trackMouse() {
 
       // Mark <html> data attribute with animation state
       document.documentElement.dataset.mode = "spotlight";
-    }, 5000);
+    }, 25000);
   }
 }
 
