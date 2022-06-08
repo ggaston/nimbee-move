@@ -3,12 +3,17 @@
    z-index: var(--z-index-header);
    width: 100%;
    background-color: var(--color-header-bg);
-   
+}
+
+.header-logo {
+    float: left;
 }
 
 .header-headline {
-    float: right;
+    text-align: center;
+    width: 100%;
     margin: 0;
+    margin-left: -165px;
     padding:0 45px 0 0; 
     line-height: 72px;
     font-size: var(--text-size-lg);
