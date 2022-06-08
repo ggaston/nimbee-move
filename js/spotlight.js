@@ -8,7 +8,7 @@ document.documentElement.dataset.mode = "spotlight";
 spotlight
   .to("#spotlight", {
     "--spotlight-x": "38%",
-    "--spotlight-y": "52%",
+    "--spotlight-y": "58%",
     duration: 1,
     delay: 4,
     onStart: () => {
@@ -17,7 +17,7 @@ spotlight
   })
   .to("#spotlight", {
     "--spotlight-x": "24%",
-    "--spotlight-y": "35%",
+    "--spotlight-y": "55%",
     duration: 1,
     delay: 4,
     onStart: () => {
@@ -26,7 +26,7 @@ spotlight
   })
   .to("#spotlight", {
     "--spotlight-x": "11%",
-    "--spotlight-y": "30%",
+    "--spotlight-y": "50%",
     duration: 2,
     delay: 4,
     onStart: () => {
@@ -35,7 +35,7 @@ spotlight
   })
   .to("#spotlight", {
     "--spotlight-x": "41%",
-    "--spotlight-y": "40%",
+    "--spotlight-y": "50%",
     duration: 2,
     delay: 3,
     onStart: () => {
@@ -44,7 +44,7 @@ spotlight
   })
   .to("#spotlight", {
     "--spotlight-x": "71%",
-    "--spotlight-y": "65%",
+    "--spotlight-y": "62%",
     duration: 2,
     delay: 4,
     onStart: () => {
@@ -53,7 +53,7 @@ spotlight
   })
   .to("#spotlight", {
     "--spotlight-x": "51%",
-    "--spotlight-y": "54%",
+    "--spotlight-y": "62%",
     duration: 2,
     delay: 4,
     onStart: () => {
@@ -61,8 +61,8 @@ spotlight
     },
   })
   .to("#spotlight", {
-    "--spotlight-x": "46%",
-    "--spotlight-y": "62%",
+    "--spotlight-x": "43%",
+    "--spotlight-y": "65%",
     duration: 1,
     delay: 4,
     onStart: () => {
@@ -74,20 +74,23 @@ spotlight
 window.addEventListener("mousemove", resetTimeout);
 window.addEventListener("click", resetTimeout);
 
-function resetTimeout() {
+function resetTimeout(e) {
     // Cancel timeout if walkthrough
-    if (document.documentElement.dataset.mode === "walkthrough") {
-        clearTimeout(spotlightTimeout);
-        spotlightTimeout = null;
-        return;
-    }
+    // if (document.documentElement.dataset.mode === "walkthrough") {
+    //     clearTimeout(spotlightTimeout);
+    //     spotlightTimeout = null;
+    //     return;
+    // }
+
+    console.log('reset spotlight timeout: ' + spotlightTimeout)
+    console.log('reset spotlight event: ' + e.type)
   
     // Spotlight dismiss only once
     if (spotlightTimeout) {
-      //console.log('mousemove: ' + spotlightTimeout)
       clearTimeout(spotlightTimeout);
       spotlightTimeout = null;
       trackMouse();
+
       return;
     }
   
@@ -125,7 +128,7 @@ function trackMouse() {
 
       // Mark <html> data attribute with animation state
       document.documentElement.dataset.mode = "spotlight";
-    }, 5000);
+    }, 25000);
   }
 }
 

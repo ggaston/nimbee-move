@@ -20,6 +20,7 @@ function showPopper(evt, target) {
 
 	if (targetEl.dataset.behavior === 'popper-open' && targetEl.dataset.target) {
 		const popperEl = document.getElementById(targetEl.dataset.target);
+		let mode = document.documentElement.dataset.mode
 
 		if (!popperEl.classList.contains('is-visible')) {
 			targetEl.classList.add('active');
@@ -27,8 +28,25 @@ function showPopper(evt, target) {
 			popperEl.clientHeight;
 
 			popperEl.classList.add('is-visible');
-			popperEl.style.left = targetEl.offsetLeft - 130 + 'px';
-			popperEl.style.top = targetEl.offsetTop - popperEl.clientHeight - 20 + 'px';
+			document.documentElement.dataset.mode = mode + " hasPopper";
+			// TODO: read width/height of popper from DOM
+			const rect = targetEl.getBoundingClientRect()
+			const spotWidthOffset = 28
+			const popperSpotMargin = 20
+			const headerHeight = 86
+			const x = targetEl.offsetLeft - popperEl.clientWidth / 2 + spotWidthOffset 
+			const y = targetEl.offsetTop - popperEl.clientHeight - 20
+
+			const boundX = rect.x - popperEl.clientWidth / 2
+			const boundY = rect.y - popperEl.clientHeight - popperSpotMargin - headerHeight
+
+			console.log(rect.x - popperEl.clientWidth / 2)
+			console.log(rect.y - popperEl.clientHeight - popperSpotMargin - headerHeight)
+
+			// If popper renders outside of the viewport boundaries adjust calculation
+			popperEl.style.left = (boundX > 0 ? x : x - boundX) + 'px';
+			// popperEl.style.top = (boundY > 0 ? y : y - boundY) + 'px';
+			popperEl.style.top = y + 'px';
 			console.log('show popper');
 		}
 	}
@@ -36,10 +54,11 @@ function showPopper(evt, target) {
 
 function hidePopper(evt, target) {
 	const targetEl = target || evt.currentTarget;
+	let mode = document.documentElement.dataset.mode
 	let popperEl = null;
 
 	if (transitionTimeout) {
-		resetTimeout(transitionTimeout)
+		clearTimeout(transitionTimeout)
 	}
 
 	if (targetEl.dataset.behavior === 'popper-open' && targetEl.dataset.target) {
@@ -51,6 +70,8 @@ function hidePopper(evt, target) {
 		if (popperEl.classList.contains('is-visible')) {
 			popperEl.style.top = null;
 			popperEl.classList.remove('is-visible');
+
+			document.documentElement.dataset.mode = mode.replace(' hasPopper', '')
 
 			// On transition end make it invisible, remove from display and set original top position
 			transitionTimeout = setTimeout(() => {
@@ -74,7 +95,10 @@ function hidePopper(evt, target) {
 
 function clearPoppers() {
 	// Hide open poppers
+	let mode = document.documentElement.dataset.mode
 	let openPoppers = document.querySelectorAll('.popper.is-visible');
+	
+	document.documentElement.dataset.mode = mode.replace(' hasPopper', '')
 	openPoppers.forEach((el) => {
 		const target = document.querySelector('[data-target="' + el.id + '"]');
 		hidePopper(null, target);

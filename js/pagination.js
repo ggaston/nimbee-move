@@ -29,10 +29,14 @@ let pagination = {
       element.parentElement.addEventListener("click", function (event) {
         self.show(event, index);
       });
+      element.parentElement.addEventListener('mouseleave', () => { clearPoppers() })
     });
 
     prev.addEventListener("click", self.prev.bind(this));
     next.addEventListener("click", self.next.bind(this));
+
+    next.addEventListener('mouseleave', () => { clearPoppers() })
+    prev.addEventListener('mouseleave', () => { clearPoppers() })
 
     return this;
   },
