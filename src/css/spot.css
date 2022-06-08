@@ -1,10 +1,8 @@
 .spot-container {
   position: absolute;
   z-index: var(--z-index-spots);
-  max-width: 1680px;
-  max-height: 980px;
-  height: 980px;
-  width: 1680px;
+  height: 980px; /* initial height, will be recalculate with js */
+  width: 1680px; /* initial width, will be recalculate with js */
   bottom: 0;
 }
 
