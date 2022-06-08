@@ -98,16 +98,8 @@ function resetTimeout() {
     document.documentElement.dataset.mode = "interactive";
   
     spotlightEl.style.opacity = 0;
-    //Hide spotlight
-    spotlightEl.ontransitionend = (evt) => {
-      //console.log("opacity: " + spotlightEl.style.opacity);
-      if (spotlightEl.style.opacity === "0") {
-        spotlightEl.style.zIndex = -1;
-      }
-    };
   
     spotlight.pause();
-    //spotlight.stop();
     trackMouse();
   }
 
@@ -115,7 +107,7 @@ function trackMouse() {
   //console.log('spotlightTimeout: ' + spotlightTimeout)
   if (!spotlightTimeout) {
     spotlightTimeout = setTimeout(() => {
-      spotlightEl.style.zIndex = 4;
+      spotlightEl.style.zIndex = 4; // FIXME: in some cases higher z-index persist in interactive mode
       spotlightEl.style.opacity = 1;
 
       // Hide open poppers
