@@ -41,3 +41,11 @@
     --z-index-spotlight: 4;
     --z-index-overlay: 1;
 }
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input, select, textarea, button, a, div {
+    -webkit-tap-highlight-color: transparent;
+}
