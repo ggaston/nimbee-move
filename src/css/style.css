@@ -34,6 +34,7 @@
     --text-size-xxl: 4.5rem;
 
     --z-index-spots: 2;
+    --z-index-spot: 10; /* spots over popper */
     --z-index-content: 5;
     --z-index-popper: 6;
     --z-index-header: 7;

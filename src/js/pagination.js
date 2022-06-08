@@ -84,9 +84,9 @@ let pagination = {
 
     console.log("show: " + selectedPage);
 
-    // Hide current
+    // Clear all open poppers
     if (selectedEl) {
-      hidePopper(null, selectedEl);
+      clearPoppers()
     }
 
     // highlight pagination

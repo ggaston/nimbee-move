@@ -100,7 +100,7 @@ function resetTimeout() {
     spotlightEl.style.opacity = 0;
     //Hide spotlight
     spotlightEl.ontransitionend = (evt) => {
-      console.log("opacity: " + spotlightEl.style.opacity);
+      //console.log("opacity: " + spotlightEl.style.opacity);
       if (spotlightEl.style.opacity === "0") {
         spotlightEl.style.zIndex = -1;
       }
@@ -112,7 +112,7 @@ function resetTimeout() {
   }
 
 function trackMouse() {
-  console.log('spotlightTimeout: ' + spotlightTimeout)
+  //console.log('spotlightTimeout: ' + spotlightTimeout)
   if (!spotlightTimeout) {
     spotlightTimeout = setTimeout(() => {
       spotlightEl.style.zIndex = 4;
