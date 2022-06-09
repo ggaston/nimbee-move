@@ -23,10 +23,14 @@
 
 .popper-content {
     min-width: 200px;
-    width: 280px;
+    width: 260px;
     padding: 25px;
     font-size: var(--text-size-sm);
     font-weight: 400;
+}
+
+.popper-headline {
+    margin-top: .25rem;
 }
 
 .popper-headline-icon {
@@ -47,14 +51,15 @@
 }
 
 .popper-feature {
-    margin-bottom: .75rem;
+    margin-bottom: .5rem;
 }
 .popper-feature-icon {
     float: left;
+    transform: translate(5px, 2px);
 }
 
 .popper-feature-text {
     display: block;
-    margin-left: 40px;
+    margin-left: 32px;
 }
 

@@ -10,3 +10,9 @@ h1 {
     font-weight: 600;
     font-size: var(--text-size-lg);
 }
+
+.pill-light {
+    background-color: #cccccc66;
+    padding: .1rem 0.25rem;
+    border-radius: .25rem;
+}
