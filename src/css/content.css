@@ -7,3 +7,22 @@
     margin:auto;
     padding-bottom: 3vh;
 }
+
+.headline {
+    display: none;
+    min-height: 50px;
+    max-width: 85vw;
+    opacity: 0;
+    transition: opacity 5s;
+    white-space: normal;
+    text-align: center;
+    margin: auto;
+}
+
+.headline.is-visible {
+    opacity: 1;
+}
+
+.headline.is-block {
+    display: block;
+}

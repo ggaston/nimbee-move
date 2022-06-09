@@ -5,8 +5,8 @@ body {
 }
 
 body {
-    background-color:rgb(105, 96, 80);
-    background-image:
+    background-color:var(--color-black-light);
+    /* background-image:
     radial-gradient(at 40% 20%, rgb(57, 63, 36) 0px, transparent 50%),
     radial-gradient(at 80% 0%, hsla(33,32%,38%,1) 0px, transparent 50%),
     radial-gradient(at 0% 50%, hsla(266,3%,33%,1) 0px, transparent 50%),
@@ -15,7 +15,7 @@ body {
     radial-gradient(at 78% 100%, rgb(50, 39, 36) 0px, transparent 50%),
     radial-gradient(at 0% 0%, hsla(74,25%,17%,1) 0px, transparent 50%);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     color: var(--color-blue);
 }
 

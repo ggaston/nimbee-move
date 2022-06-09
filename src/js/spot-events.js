@@ -59,6 +59,8 @@ function showPopper(evt, target) {
 			popperEl.style.left = (boundX > 0 ? x : x - boundX) + 'px';
 			// popperEl.style.top = (boundY > 0 ? y : y - boundY) + 'px';
 			popperEl.style.top = y + 'px';
+
+			showHeadline(targetEl.dataset.target.replace('popper-', ''))
 			console.log('show popper');
 		}
 	}
@@ -115,4 +117,18 @@ function clearPoppers() {
 		const target = document.querySelector('[data-target="' + el.id + '"]');
 		hidePopper(null, target);
 	});
+}
+
+function showHeadline(id) {
+	const headlineEl = document.getElementById('headline-' + id)
+	const headlineEls = document.querySelectorAll('.content .headline[data-behavior="fade-in"]')
+
+	headlineEls.forEach((el) => {
+		el.classList.remove('is-block')
+		el.classList.remove('is-visible')
+	})
+
+	headlineEl.classList.add('is-block')
+	headlineEl.clientHeight
+	headlineEl.classList.add('is-visible')
 }
