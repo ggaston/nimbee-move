@@ -1,7 +1,19 @@
 const spotEls = document.querySelectorAll('[data-behavior="popper-open"]');
 let transitionTimeout = null
 
-spotEls.forEach((element) => {
+// FIXME: Temporary use map of initial heights of poppers
+
+const popperHeightMap = {
+	'popper-truck' : 217,
+	'popper-cargo' : 209,
+	'popper-driver' : 243,
+	'popper-app' : 272,
+	'popper-request' : 280,
+	'popper-battery' : 310,
+	'popper-ev' : 235,
+}
+
+spotEls.forEach((element, index) => {
 	//Bind events
 	element.addEventListener('click', showPopper);
 	element.addEventListener('mouseleave', hidePopper);
@@ -9,7 +21,7 @@ spotEls.forEach((element) => {
 	// Set initial position of poppers
 	requestAnimationFrame(() => {
 		const popperEl = document.getElementById(element.dataset.target);
-		popperEl.style.top = element.offsetTop - 320 + 'px';
+		popperEl.style.top = element.offsetTop - popperHeightMap[element.dataset.target] + 'px';
 		//console.log(element.offsetTop, element)
 	});
 });
@@ -76,7 +88,7 @@ function hidePopper(evt, target) {
 			// On transition end make it invisible, remove from display and set original top position
 			transitionTimeout = setTimeout(() => {
 				popperEl.classList.remove('is-block');
-				popperEl.style.top = targetEl.offsetTop - 320 + 'px';
+				popperEl.style.top = targetEl.offsetTop - popperHeightMap[targetEl.dataset.target] + 'px';
 			}, 200);
 
 
