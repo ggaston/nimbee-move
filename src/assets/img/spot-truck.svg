@@ -1,8 +1,8 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M21.0588 9.206C21.3469 10.1095 21.4957 11.0517 21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C6.75329 21.5 2.5 17.2467 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C12.9484 2.50428 13.8905 2.65307 14.7941 2.94122" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17.8 5.05L19.0011 6.25L21 4.25" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M14.8095 11.0833H9.40476C8.90507 11.0833 8.5 10.6783 8.5 10.1786V7" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="14" cy="16.5" r="1.5" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7 7H8.90476C10.3287 7 11.6695 7.6704 12.5238 8.80952L13.6189 10.2697C13.7912 10.4994 14.0147 10.6859 14.2716 10.8144L16.3944 11.8758C17.072 12.2146 17.5 12.9071 17.5 13.6646V15.15C17.5 15.508 17.3578 15.8514 17.1046 16.1046C16.8514 16.3578 16.508 16.5 16.15 16.5H15.5" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.5 16.5H7" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.9762 18.5027H15.5015" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="17.0021" cy="18.5027" r="1.50063" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="5.47548" cy="18.5027" r="1.50063" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.99585 13.8617H14.5011C14.7773 13.8617 15.0013 13.6377 15.0013 13.3615V6.99792C15.0013 5.89289 14.1055 4.99708 13.0004 4.99708H3.99668C2.89165 4.99708 1.99585 5.89289 1.99585 6.99792V17.5023C1.99585 18.0548 2.44375 18.5027 2.99627 18.5027H3.97493" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.0012 6.99792H18.2491C19.302 6.99792 20.2421 7.65729 20.6007 8.64722L21.8845 12.1918C21.9637 12.4102 22.0041 12.6408 22.0041 12.8731V17.0021C22.0041 17.8309 21.3323 18.5027 20.5035 18.5027H18.5027" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.0041 13.0004H19.0029L18.2955 12.293C18.1079 12.1054 17.8534 12 17.5881 12H15.0012" stroke="#ECF8FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
