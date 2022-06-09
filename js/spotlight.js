@@ -135,8 +135,12 @@ function trackMouse() {
 function onStartEffects(prevId, nextId, delay) {
       const prevSpotEl = document.getElementById(prevId);
       const currentSpotEl = document.getElementById(nextId);
+
+      console.log(nextId)
       prevSpotEl.classList.remove("active");
       setTimeout(() => {
         currentSpotEl.classList.add("active");
+        // Change headline
+        showHeadline(nextId.replace('spot-', ''))
       }, delay);
 }
