@@ -49,7 +49,7 @@
 					</div>
 				</div>
 				<div
-					class="spot"
+					class="spot active"
 					id="spot-driver"
 					data-behavior="popper-open"
 					data-target="popper-driver"
@@ -59,7 +59,7 @@
 					</div>
 				</div>
 				<div
-					class="spot active"
+					class="spot"
 					id="spot-app"
 					data-behavior="popper-open"
 					data-target="popper-app"
@@ -68,6 +68,17 @@
 						<img src="assets/img/spot-app.svg" alt="" class="spot-icon" />
 					</div>
 				</div>
+        <div
+					class="spot"
+					id="spot-charging"
+					data-behavior="popper-open"
+					data-target="popper-charging"
+				>
+					<div class="spot-dot">
+						<img src="assets/img/spot-charging.svg" alt="" class="spot-icon" />
+					</div>
+				</div>
+
 				<div class="spot" id="spot-ev" data-behavior="popper-open" data-target="popper-ev">
 					<div class="spot-dot">
 						<img src="assets/img/spot-ev.svg" alt="" class="spot-icon" />
@@ -106,7 +117,7 @@
 								class="popper-headline-icon"
 							/>
 							<span class="popper-headline-text"
-								>eVan ’s route and the next stop are real-time optimized</span
+								>eVan’s route and the next stop are real-time optimized</span
 							>
 						</h4>
 						<ul class="popper-features">
@@ -165,7 +176,7 @@
 								class="popper-headline-icon"
 							/>
 							<span class="popper-headline-text"
-								>Second charging unit is ready for next charging jobs</span
+								>Second charging unit is ready for the next charging jobs</span
 							>
 						</h4>
 						<ul class="popper-features">
@@ -214,7 +225,7 @@
 								class="popper-headline-icon"
 							/>
 							<span class="popper-headline-text"
-								>Assigned driver arrives to order location</span
+								>Assigned driver arrives to the order location</span
 							>
 						</h4>
 						<ul class="popper-features">
@@ -280,7 +291,7 @@
 								class="popper-headline-icon"
 							/>
 							<span class="popper-headline-text"
-								>Driver app enables following actions</span
+								>Driver app enables the following actions</span
 							>
 						</h4>
 						<ul class="popper-features">
@@ -311,7 +322,7 @@
 									class="popper-feature-icon"
 								/>
 								<span class="popper-feature-text"
-									>check the start of charging process (starts automatically)</span
+									>check the start of the charging process (starts automatically)</span
 								>
 							</li>
 							<li class="popper-feature">
@@ -329,7 +340,125 @@
 				</div>
 				<!-- /popper-app -->
 
-				<!-- popper-request -->
+        <!-- popper-charging -->
+				<div class="popper" id="popper-charging">
+					<div class="popper-content">
+						<h4 class="popper-headline">
+							<img
+								src="assets/img/spot-charging.svg"
+								alt=""
+								class="popper-headline-icon"
+							/>
+							<span class="popper-headline-text"
+								>The car being charged is monitored every minute</span
+							>
+						</h4>
+						<ul class="popper-features">
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-battery.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>current SOC: 23 % → target: 44%</span
+								>
+							</li>
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-battery.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>current charging power: 46 kW</span
+								>
+							</li>
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-clock.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>charging finished by: 14:15</span
+								>
+							</li>
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-car.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>car ready by: 14:25</span
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /popper-charging -->
+
+				<!-- popper-battery -->
+				<div class="popper" id="popper-battery">
+					<div class="popper-content">
+						<h4 class="popper-headline">
+							<img
+								src="assets/img/spot-battery.svg"
+								alt=""
+								class="popper-headline-icon"
+							/>
+							<span class="popper-headline-text"
+								>Unit pairs and starts charging automatically</span
+							>
+						</h4>
+						<ul class="popper-features">
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-car.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>identifies vehicle & executes digital handshake</span
+								>
+							</li>
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-battery.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>sets the charging curve based on the vehicle’s charging profile and initial SoC</span
+								>
+							</li>
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-charge.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>charges kWh based on the SLA or an individual order</span
+								>
+							</li>
+							<li class="popper-feature">
+								<img
+									src="assets/img/icon-spinner.svg"
+									alt=""
+									class="popper-feature-icon"
+								/>
+								<span class="popper-feature-text"
+									>monitors the process and specifies the estimated charging completion</span
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /popper-battery -->
+
+        <!-- popper-request -->
 				<div class="popper" id="popper-request">
 					<div class="popper-content">
 						<h4 class="popper-headline">
@@ -370,7 +499,7 @@
 									class="popper-feature-icon"
 								/>
 								<span class="popper-feature-text"
-									>option to call the driver if need to</span
+									>option to call the driver if needed</span
 								>
 							</li>
 							<li class="popper-feature">
@@ -390,72 +519,13 @@
 									class="popper-feature-icon"
 								/>
 								<span class="popper-feature-text"
-									>can stop charging if necessary</span
+									>stop charging if necessary</span
 								>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<!-- /popper-request -->
-
-				<!-- popper-battery -->
-				<div class="popper" id="popper-battery">
-					<div class="popper-content">
-						<h4 class="popper-headline">
-							<img
-								src="assets/img/spot-battery.svg"
-								alt=""
-								class="popper-headline-icon"
-							/>
-							<span class="popper-headline-text"
-								>Unit pairs and starts charging automatically</span
-							>
-						</h4>
-						<ul class="popper-features">
-							<li class="popper-feature">
-								<img
-									src="assets/img/icon-car.svg"
-									alt=""
-									class="popper-feature-icon"
-								/>
-								<span class="popper-feature-text"
-									>vehicle identification & digital handshake</span
-								>
-							</li>
-							<li class="popper-feature">
-								<img
-									src="assets/img/icon-battery.svg"
-									alt=""
-									class="popper-feature-icon"
-								/>
-								<span class="popper-feature-text"
-									>sets the charging curve based on the vehicle’s charging profile and initial SoC</span
-								>
-							</li>
-							<li class="popper-feature">
-								<img
-									src="assets/img/icon-charge.svg"
-									alt=""
-									class="popper-feature-icon"
-								/>
-								<span class="popper-feature-text"
-									>charges kWh based on the SLA or an individual order</span
-								>
-							</li>
-							<li class="popper-feature">
-								<img
-									src="assets/img/icon-spinner.svg"
-									alt=""
-									class="popper-feature-icon"
-								/>
-								<span class="popper-feature-text"
-									>monitors the process and specifies the estimated charging completion</span
-								>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- /popper-battery -->
 
 				<!-- popper-ev -->
 				<div class="popper" id="popper-ev">
@@ -494,7 +564,7 @@
 									class="popper-feature-icon"
 								/>
 								<span class="popper-feature-text"
-									>time-slot: 10-10:30 am, probability 95%</span
+									>time slot: 10-10:30 am, probability 95%</span
 								>
 							</li>
 							<li class="popper-feature">
@@ -504,7 +574,7 @@
 									class="popper-feature-icon"
 								/>
 								<span class="popper-feature-text"
-									>pre-allocated order:    <span class="pill-light">NMB 230978</span></span
+									>pre-allocated order: <span class="pill-light">NMB 230978</span></span
 								>
 							</li>
 						</ul>
@@ -526,13 +596,13 @@
 			<!-- content -->
 			<main class="content">
 
-        <h1 data-behavior="fade-in" class="headline" id="headline-driver">3-mins PIT STOP action starts by placing the charger next to the car</h1>
-        <h1 data-behavior="fade-in" class="headline is-visible is-block" id="headline-app">The driver app is just 2-clicks instrument, the magic conductor is the cloud-based core of the platform</h1>
+        <h1 data-behavior="fade-in" class="headline  is-visible is-block" id="headline-driver">A 3-minute pit stop action (aka charging setup) starts by placing the charger next to the car</h1>
+        <h1 data-behavior="fade-in" class="headline" id="headline-app">The driver app is just a tool; the cloud-based core of the platform is the real magic conductor</h1>
         <h1 data-behavior="fade-in" class="headline" id="headline-battery">Custom charging is automated and personalized to the highest level</h1>
-        <h1 data-behavior="fade-in" class="headline" id="headline-request">Car owner is well informed, safety and privacy secured</h1>
+        <h1 data-behavior="fade-in" class="headline" id="headline-request">Car owner is kept up to date, with safety and privacy secured</h1>
         <h1 data-behavior="fade-in" class="headline" id="headline-cargo">Another job from this allocated current capacity will start within 15 minutes </h1>
         <h1 data-behavior="fade-in" class="headline" id="headline-truck">NimBee eVans have real-time optimized routes</h1>
-        <h1 data-behavior="fade-in" class="headline" id="headline-ev">Other cars in the area are planned based on prediction model</h1>
+        <h1 data-behavior="fade-in" class="headline" id="headline-ev">Charging of other cars in the area is planned based on a prediction model</h1>
 
 				<!-- /content -->
 				<!-- button -->
@@ -546,22 +616,6 @@
 						<img src="assets/img/icon-btn-arrow-back.svg" alt="" />
 					</div>
 					<ul class="pagination-items">
-						<li class="pagination-item">
-							<a
-								href="#"
-								class="pagination-link"
-								data-behavior="pagination"
-								data-target="spot-truck"
-							></a>
-						</li>
-						<li class="pagination-item">
-							<a
-								href="#"
-								class="pagination-link"
-								data-behavior="pagination"
-								data-target="spot-cargo"
-							></a>
-						</li>
 						<li class="pagination-item">
 							<a
 								href="#"
@@ -583,6 +637,22 @@
 								href="#"
 								class="pagination-link"
 								data-behavior="pagination"
+								data-target="spot-battery"
+							></a>
+						</li>
+            <li class="pagination-item">
+							<a
+								href="#"
+								class="pagination-link"
+								data-behavior="pagination"
+								data-target="spot-charging"
+							></a>
+						</li>
+						<li class="pagination-item">
+							<a
+								href="#"
+								class="pagination-link"
+								data-behavior="pagination"
 								data-target="spot-request"
 							></a>
 						</li>
@@ -591,7 +661,15 @@
 								href="#"
 								class="pagination-link"
 								data-behavior="pagination"
-								data-target="spot-battery"
+								data-target="spot-cargo"
+							></a>
+						</li>
+						<li class="pagination-item">
+							<a
+								href="#"
+								class="pagination-link"
+								data-behavior="pagination"
+								data-target="spot-truck"
 							></a>
 						</li>
 						<li class="pagination-item">

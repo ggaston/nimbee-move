@@ -8,17 +8,18 @@ const popperHeightMap = {
 	'popper-cargo' : 209,
 	'popper-driver' : 243,
 	'popper-app' : 272,
+	'popper-charging' : 167,
 	'popper-request' : 280,
 	'popper-battery' : 310,
 	'popper-ev' : 235,
 }
 
 spotEls.forEach((element, index) => {
-	//Bind events
+	//Bind spot events
 	element.addEventListener('click', showPopper);
 	element.addEventListener('mouseleave', hidePopper);
 
-	// Set initial position of poppers
+	// Set initial position of poppers. Each of the popper should be close to the specific position of spot.
 	requestAnimationFrame(() => {
 		const popperEl = document.getElementById(element.dataset.target);
 		popperEl.style.top = element.offsetTop - popperHeightMap[element.dataset.target] + 'px';
