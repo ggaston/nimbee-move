@@ -6,7 +6,7 @@ body {
 }
 
 body {
-    background-image: url("../assets/img/bg.jpg");
+    background-image: url("../assets/img/bg-progressive.jpg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: relative;
