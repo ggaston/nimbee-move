@@ -1,6 +1,6 @@
 :root {
-    --spotlight-x: 43%;
-    --spotlight-y: 65%;
+    --spotlight-x: 35%;
+    --spotlight-y: 72%;
   }
 
 [data-mode~="interactive"] .spotlight {

@@ -67,36 +67,41 @@
 }
 
 #spot-truck {
-  bottom: 41%;
   left: 8%;
+  bottom: 41%;
 }
 
 #spot-cargo {
-  bottom: 35%;
   left: 21%;
+  bottom: 35%;
 }
 
 #spot-driver {
-  bottom: 32%;
   left: 35.5%;
+  bottom: 18%;
 }
 
 #spot-app {
-  bottom: 26%;
-  left: 41%;
+  left: 35%;
+  bottom: 30%;
+}
+
+#spot-charging {
+  left: 44%;
+  bottom: 36%;
 }
 
 #spot-battery {
-  bottom: 28%;
   left: 50.5%;
+  bottom: 28%;
 }
 
 #spot-ev {
-  bottom: 26%;
-  left: 69%;
+  left: 74%;
+  bottom: 22%;
 }
 
 #spot-request {
-  bottom: 42.5%;
-  left: 39%;
+  left: 72%;
+  bottom: 37%;
 }

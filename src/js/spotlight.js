@@ -7,66 +7,75 @@ document.documentElement.dataset.mode = "spotlight";
 
 spotlight
   .to("#spotlight", {
-    "--spotlight-x": "38%",
-    "--spotlight-y": "58%",
+    "--spotlight-x": "34%",
+    "--spotlight-y": "62%",
     duration: 1,
     delay: 4,
     onStart: () => {
-      onStartEffects('spot-app', 'spot-driver', 500)
+      onStartEffects('spot-driver', 'spot-app', 500)
     },
   })
   .to("#spotlight", {
-    "--spotlight-x": "24%",
-    "--spotlight-y": "55%",
+    "--spotlight-x": "50%",
+    "--spotlight-y": "66%",
     duration: 1,
     delay: 4,
     onStart: () => {
-      onStartEffects('spot-driver', 'spot-cargo', 500)
+      onStartEffects('spot-app', 'spot-battery', 500)
     },
   })
   .to("#spotlight", {
-    "--spotlight-x": "11%",
-    "--spotlight-y": "50%",
-    duration: 2,
+    "--spotlight-x": "44%",
+    "--spotlight-y": "54%",
+    duration: 1,
     delay: 4,
     onStart: () => {
-      onStartEffects('spot-cargo', 'spot-truck', 1500)
+      onStartEffects('spot-battery', 'spot-charging', 500)
     },
   })
   .to("#spotlight", {
-    "--spotlight-x": "41%",
+    "--spotlight-x": "72%",
     "--spotlight-y": "50%",
-    duration: 2,
+    duration: 1,
     delay: 3,
     onStart: () => {
-      onStartEffects('spot-truck', 'spot-request', 1500)
+      onStartEffects('spot-charging', 'spot-request', 500)
     },
   })
   .to("#spotlight", {
-    "--spotlight-x": "71%",
+    "--spotlight-x": "21%",
     "--spotlight-y": "62%",
-    duration: 2,
-    delay: 4,
-    onStart: () => {
-      onStartEffects('spot-request', 'spot-ev', 1500)
-    },
-  })
-  .to("#spotlight", {
-    "--spotlight-x": "51%",
-    "--spotlight-y": "62%",
-    duration: 2,
-    delay: 4,
-    onStart: () => {
-      onStartEffects('spot-ev', 'spot-battery', 1500)
-    },
-  })
-  .to("#spotlight", {
-    "--spotlight-x": "43%",
-    "--spotlight-y": "65%",
     duration: 1,
     delay: 4,
     onStart: () => {
-      onStartEffects('spot-battery', 'spot-app', 500)
+      onStartEffects('spot-request', 'spot-cargo', 500)
+    },
+  })
+  .to("#spotlight", {
+    "--spotlight-x": "8%",
+    "--spotlight-y": "62%",
+    duration: 1,
+    delay: 4,
+    onStart: () => {
+      onStartEffects('spot-cargo', 'spot-truck', 500)
+    },
+  })
+  .to("#spotlight", {
+    "--spotlight-x": "74%",
+    "--spotlight-y": "72%",
+    duration: 1,
+    delay: 4,
+    onStart: () => {
+      onStartEffects('spot-truck', 'spot-ev', 500)
+    },
+  })
+  .to("#spotlight", {
+    "--spotlight-x": "35%",
+    "--spotlight-y": "72%",
+    duration: 1,
+    delay: 4,
+    onStart: () => {
+      onStartEffects('spot-ev', 'spot-driver', 500)
     },
   })
   
