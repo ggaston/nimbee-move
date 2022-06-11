@@ -27,8 +27,8 @@ html, body {
 
 .spot:nth-child(3) {
     position:absolute;
-    top: 20%;
-    right: 40%;
+    top: 40%;
+    right: 50%;
 }
 
 .pop {
@@ -130,9 +130,4 @@ html, body {
         opacity: 0;
         transform: translateY(0);
     }
-}
-
-.text-content {
-    position: relative;
-    z-index: 5;
 }

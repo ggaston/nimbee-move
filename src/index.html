@@ -33,19 +33,28 @@
 			</div>
 
 			<div class="text-content">
-				<div data-behavior="spot-control" data-content='[data-behavior="spot-content"]'>
-					FAFAFAFAFA
+				<div data-behavior="spot-control-prev">prev</div>
+				<div data-behavior="spot-control" data-content='.spot:nth-child(1) [data-behavior="spot-content"]'>
+					A
 				</div>
-				<a href="#">here I am</a><br>
-				<label>window.innerWidth</label><input id="windowInnerWidth" readonly disabled/><br>
-				<label>window.innerHeight</label><input id="windowInnerHeight" readonly disabled/><br>
-				<label>rect.x</label><input id="rectX" readonly disabled/><br>
-				<label>pos.x</label><input id="posX" readonly disabled/><br>
-				<label>offset x</label><input id="offsetX" readonly disabled/><br>
+				<div data-behavior="spot-control" data-content='.spot:nth-child(2) [data-behavior="spot-content"]'>
+					B
+				</div>
+				<div data-behavior="spot-control" data-content='.spot:nth-child(3) [data-behavior="spot-content"]'>
+					C
+				</div>
+				<div data-behavior="spot-control-next">next</div>
+
+				<br>
+				<label>window.innerWidth</label
+				><input id="windowInnerWidth" readonly disabled /><br />
+				<label>window.innerHeight</label
+				><input id="windowInnerHeight" readonly disabled /><br />
+				<label>rect.x</label><input id="rectX" readonly disabled /><br />
+				<label>pos.x</label><input id="posX" readonly disabled /><br />
+				<label>offset x</label><input id="offsetX" readonly disabled /><br />
 			</div>
 		</section>
-
-
 
 		<script src="js/spot-container.js"></script>
 
@@ -55,10 +64,13 @@
 					const defaults = {
 						spotSelector: selector,
 						spotControlSelector: '[data-behavior="spot-control"]',
+						spotControlSelectorPrev: '[data-behavior="spot-control-prev"]',
+						spotControlSelectorNext: '[data-behavior="spot-control-next"]',
 						spotContentSelector: '[data-behavior="spot-content"]',
 						animateClassName: "is-animated",
 						activeClassName: "is-active",
 					};
+
 					const options = (this.options = { ...defaults, ...opts });
 
 					this.options.spots = document.querySelectorAll(options.spotSelector);
@@ -68,6 +80,11 @@
 					const spotControls = (this.options.spotControls = document.querySelectorAll(
 						options.spotControlSelector
 					));
+
+					const spotControlsNext = (this.options.spotControlsNext =
+						document.querySelectorAll(options.spotControlSelectorNext));
+					const spotControlsPrev = (this.options.spotControlsPrev =
+						document.querySelectorAll(options.spotControlSelectorPrev));
 
 					// Bind clickout events
 					document.addEventListener("click", this.clickOut.bind(this));
@@ -79,34 +96,50 @@
 						el.addEventListener("click", this.showSpotContent.bind(this));
 					});
 
+					if (spotControlsNext.length && spotControlsPrev.length) {
+						spotControlsNext.forEach((el) => {
+							el.addEventListener("click", this.next.bind(this));
+						});
+						spotControlsPrev.forEach((el) => {
+							el.addEventListener("click", this.prev.bind(this));
+						});
+					}
+
 					// Get content heights
-					requestAnimationFrame(()=>{
-					spotContents.forEach((contentEl) => {
-						const el = contentEl.firstElementChild;
-						const rect = el.getBoundingClientRect();
-						const pos = {
-							x: rect.x - el.clientWidth / 2,
-						};
-						pos.y = rect.y;
+					requestAnimationFrame(() => {
+						spotContents.forEach((contentEl) => {
+							const el = contentEl.firstElementChild;
+							const rect = el.getBoundingClientRect();
+							const pos = {
+								x: rect.x - el.clientWidth / 2,
+							};
+							pos.y = rect.y;
 
-						const translateX =
-							pos.x > 0
-								? pos.x + el.clientWidth > window.innerWidth
-									? pos.x - rect.x + (window.innerWidth - (pos.x + el.clientWidth))
-									: pos.x - rect.x
-								: - pos.x - el.clientWidth / 2;
+							const translateX =
+								pos.x > 0
+									? pos.x + el.clientWidth > window.innerWidth
+										? pos.x -
+										  rect.x +
+										  (window.innerWidth - (pos.x + el.clientWidth))
+										: pos.x - rect.x
+									: -pos.x - el.clientWidth / 2;
 
-						console.log(el.clientHeight, el.clientWidth, pos.x + el.clientWidth, window.innerWidth);
-						console.log(translateX);
+							console.log(
+								el.clientHeight,
+								el.clientWidth,
+								pos.x + el.clientWidth,
+								window.innerWidth
+							);
+							console.log(translateX);
 
-						contentEl.style.transform = 'translateX(' + translateX + 'px)'
-						
-						windowInnerWidth.value = windowInnerWidth.value + window.innerWidth + ', '
-						rectX.value = rectX.value + Math.round(rect.x) + ', '
-						posX.value = posX.value + Math.round(pos.x) + ', '
-						offsetX.value = offsetX.value + translateX + ', '	
-						
-					})
+							contentEl.style.transform = "translateX(" + translateX + "px)";
+
+							windowInnerWidth.value =
+								windowInnerWidth.value + window.innerWidth + ", ";
+							rectX.value = rectX.value + Math.round(rect.x) + ", ";
+							posX.value = posX.value + Math.round(pos.x) + ", ";
+							offsetX.value = offsetX.value + translateX + ", ";
+						});
 					});
 				},
 				current: -1,
@@ -203,7 +236,8 @@
 					let triggerEls = options.spotControls;
 					let activeEls = document.querySelectorAll("." + options.activeClassName);
 
-					if (evt.target.dataset.behavior === "spot-control") {
+					// accept spot-control[-]
+					if (/spot-control/.test(evt.target.dataset.behavior) !== false) {
 						return;
 					} else {
 						activeEls.forEach((el) => {
