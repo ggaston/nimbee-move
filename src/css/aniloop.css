@@ -23,6 +23,18 @@ label {
     position: relative;
     z-index: 2;
 }
-.nav {
 
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 10rem;
+    
+}
+h1 .fade-in {
+    opacity: 1;
+}
+h1 span {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 2s;
 }

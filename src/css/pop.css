@@ -14,18 +14,18 @@ html, body {
     width: 1680px; /* initial width, will be recalculate with js */
     bottom: 0;
 }
-.spot:nth-child(1) {
+[data-behavior="spot"]:nth-child(1) {
     position:absolute;
     bottom: 60%;
     left: 24%;
 }
-.spot:nth-child(2) {
+[data-behavior="spot"]:nth-child(2) {
     position:absolute;
     bottom: 60%;
     left: 34%;
 }
 
-.spot:nth-child(3) {
+[data-behavior="spot"]:nth-child(3) {
     position:absolute;
     top: 40%;
     right: 50%;
@@ -41,11 +41,11 @@ html, body {
     opacity: 0;
 }
 
-.pop-cont {
+[data-behavior="spot-content"] {
     position: absolute;
     z-index: 1;
-    top: 50px;
-    left: 20px;
+    top: -80px;
+    left: 24px;
     width: 0;
     height: 0;
     border: 2px solid #f00;
@@ -72,18 +72,18 @@ html, body {
     color: #000;
 }
 
-.pop-trig + .pop-cont.is-animated {
+[data-behavior="spot-content"].is-animated {
     animation: hidden 1s forwards;
     overflow: visible;
 }
-.pop-trig + .pop-cont.is-animated > .pop {
+[data-behavior="spot-content"].is-animated > .pop {
     animation: slide-out 1s forwards;
 }
 
-[data-behavior="spot"].is-active > .pop-cont.is-animated {
-    animation: visible 1s forwards;
+[data-behavior="spot"].is-active > [data-behavior="spot-content"].is-animated {
+    animation: is-visible 1s forwards;
 }
-[data-behavior="spot"].is-active > .pop-cont.is-animated > .pop {
+[data-behavior="spot"].is-active > [data-behavior="spot-content"].is-animated > .pop {
     animation: slide-in 1s forwards;
 }
 
@@ -106,19 +106,18 @@ html, body {
 @keyframes slide-in {
     0% {
         opacity: 0;
-        display: block;
     }
 
     100% {
         opacity: 1;
-        transform: translateY(-120px);
+        transform: translateY(-20px);
     }
 }
 
 @keyframes slide-out {
     0% {
         opacity: 1;
-        transform: translateY(-120px);
+        transform: translateY(-20px);
     }
 
     50% {
