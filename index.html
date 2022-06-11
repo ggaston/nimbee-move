@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<section class="container">
-			<div class="spot-container">
+			<div class="spot-container" id="spot-container">
 				<div class="spot" data-behavior="spot" id="spot-1">
 					<div class="pop-trig" data-behavior="spot-control">a</div>
 					<div class="pop-cont" data-behavior="spot-content">
@@ -31,14 +31,23 @@
 					</div>
 				</div>
 			</div>
-		</section>
-		<section>
-			<div data-behavior="spot-control" data-content='[data-behavior="spot-content"]'>
-				FAFAFAFAFA
+
+			<div class="text-content">
+				<div data-behavior="spot-control" data-content='[data-behavior="spot-content"]'>
+					FAFAFAFAFA
+				</div>
+				<a href="#">here I am</a><br>
+				<label>window.innerWidth</label><input id="windowInnerWidth" readonly disabled/><br>
+				<label>window.innerHeight</label><input id="windowInnerHeight" readonly disabled/><br>
+				<label>rect.x</label><input id="rectX" readonly disabled/><br>
+				<label>pos.x</label><input id="posX" readonly disabled/><br>
+				<label>offset x</label><input id="offsetX" readonly disabled/><br>
 			</div>
 		</section>
-		<br />
-		<a href="#">here I am</a>
+
+
+
+		<script src="js/spot-container.js"></script>
 
 		<script>
 			const spottery = {
@@ -71,6 +80,7 @@
 					});
 
 					// Get content heights
+					requestAnimationFrame(()=>{
 					spotContents.forEach((contentEl) => {
 						const el = contentEl.firstElementChild;
 						const rect = el.getBoundingClientRect();
@@ -90,7 +100,13 @@
 						console.log(translateX);
 
 						contentEl.style.transform = 'translateX(' + translateX + 'px)'
-
+						
+						windowInnerWidth.value = windowInnerWidth.value + window.innerWidth + ', '
+						rectX.value = rectX.value + Math.round(rect.x) + ', '
+						posX.value = posX.value + Math.round(pos.x) + ', '
+						offsetX.value = offsetX.value + translateX + ', '	
+						
+					})
 					});
 				},
 				current: -1,
@@ -221,8 +237,8 @@
 				},
 			};
 
-			const spots = Object.assign(spottery);
-			spots.init();
+			const spoter = Object.assign(spottery);
+			spoter.init();
 
 			//spots.addAnimationClass(null, document.getElementById("spot-control-2"));
 			//spots.showSpotContent(null, document.getElementById("spot-control-2"));
