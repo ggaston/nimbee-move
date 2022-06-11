@@ -10,6 +10,15 @@ body {
 body {
     background-image: url("../assets/img/bg.jpg");
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 50% bottom;
+    background-size: cover;
     position: relative;
+}
+label {
+    color: #fff;
+}
+.text-content {
+    float: left;
+    position: relative;
+    z-index: 5;
 }

@@ -3,20 +3,32 @@ html, body {
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50%;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 .spot-container {
-    position: relative;
-    display: flex;
-    width: 500px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    position: absolute;
+    height: 980px; /* initial height, will be recalculate with js */
+    width: 1680px; /* initial width, will be recalculate with js */
+    bottom: 0;
 }
-.spot {
-    position:relative;
+.spot:nth-child(1) {
+    position:absolute;
+    bottom: 60%;
+    left: 24%;
+}
+.spot:nth-child(2) {
+    position:absolute;
+    bottom: 60%;
+    left: 34%;
+}
+
+.spot:nth-child(3) {
+    position:absolute;
+    top: 20%;
+    right: 40%;
 }
 
 .pop {
@@ -37,6 +49,7 @@ html, body {
     width: 0;
     height: 0;
     border: 2px solid #f00;
+    overflow: hidden;
 }
 
 .pop-trig {
@@ -61,6 +74,7 @@ html, body {
 
 .pop-trig + .pop-cont.is-animated {
     animation: hidden 1s forwards;
+    overflow: visible;
 }
 .pop-trig + .pop-cont.is-animated > .pop {
     animation: slide-out 1s forwards;
@@ -116,4 +130,9 @@ html, body {
         opacity: 0;
         transform: translateY(0);
     }
+}
+
+.text-content {
+    position: relative;
+    z-index: 5;
 }
