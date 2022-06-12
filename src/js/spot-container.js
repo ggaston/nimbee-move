@@ -22,18 +22,18 @@ function spots() {
     spotContainerEl.style.transform = `translateX(-${offestX}px)`
 
 
-    const log = {
-        'image width': newImageWidth,
-        'image height': newImageHeight,
-        'window width': window.innerWidth,
-        'window height': window.innerHeight,
-        'width offset': offestX,
-        'height offset': offestY
-    }
+    // const log = {
+    //     'image width': newImageWidth,
+    //     'image height': newImageHeight,
+    //     'window width': window.innerWidth,
+    //     'window height': window.innerHeight,
+    //     'width offset': offestX,
+    //     'height offset': offestY
+    // }
 
     //console.table(log)
 
-    requestAnimationFrame(spots)
+    //requestAnimationFrame(spots)
 }
 
 requestAnimationFrame(spots)

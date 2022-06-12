@@ -5,10 +5,39 @@ body {
 }
 
 h1 {
+    position: relative;
     color: var(--text-color-light);
     white-space: nowrap;
     font-weight: 600;
     font-size: var(--text-size-lg);
+}
+
+h1 .fade-in {
+    opacity: 1;
+    
+}
+h1 > span {
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    white-space: normal;
+    max-width: 800px;
+}
+.content H1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -25px;
+}
+
+h1.is-animated > span {
+    transition: opacity 0.5s;
+}
+h1.is-animated > span.fade-in {
+    transition: opacity 3s;
 }
 
 .pill-light {

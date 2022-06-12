@@ -84,16 +84,6 @@ window.addEventListener("mousemove", resetTimeout);
 window.addEventListener("click", resetTimeout);
 
 function resetTimeout(e) {
-    // Cancel timeout if walkthrough
-    // if (document.documentElement.dataset.mode === "walkthrough") {
-    //     clearTimeout(spotlightTimeout);
-    //     spotlightTimeout = null;
-    //     return;
-    // }
-
-    console.log('reset spotlight timeout: ' + spotlightTimeout)
-    console.log('reset spotlight event: ' + e.type)
-  
     // Spotlight dismiss only once
     if (spotlightTimeout) {
       clearTimeout(spotlightTimeout);
@@ -104,7 +94,7 @@ function resetTimeout(e) {
     }
   
     const spotEls = document.querySelectorAll(".spot");
-    spotEls.forEach((el) => el.classList.remove("active"));
+    nimbee_spots.clearActive()
   
     // Mark <html> data attribute about animation state
     document.documentElement.dataset.mode = "interactive";
@@ -122,12 +112,8 @@ function trackMouse() {
       spotlightEl.style.zIndex = 4; // FIXME: in some cases higher z-index persist in interactive mode
       spotlightEl.style.opacity = 1;
 
-      // Hide open poppers
-      let openPoppers = document.querySelectorAll(".popper.is-visible");
-      openPoppers.forEach((el) => {
-        const target = document.querySelector('[data-target="' + el.id + '"]');
-        hidePopper(null, target);
-      });
+      // Clear active states
+      nimbee_spots.clearActive()
 
       // Restart playback
       spotlight.resume();
@@ -144,12 +130,20 @@ function trackMouse() {
 function onStartEffects(prevId, nextId, delay) {
       const prevSpotEl = document.getElementById(prevId);
       const currentSpotEl = document.getElementById(nextId);
+      const children = currentSpotEl.parentElement.children;
+      const foreach = Array.prototype.forEach
+      let index = 0
+      
+      foreach.call(children, (child, idx) => {
+        if (child.isEqualNode(currentSpotEl)) {
+          index = idx
+        }
+      })
 
-      console.log(nextId)
-      prevSpotEl.classList.remove("active");
+      prevSpotEl.querySelector('[data-behavior="spot-control"]').classList.remove("is-active");
       setTimeout(() => {
-        currentSpotEl.classList.add("active");
+        currentSpotEl.querySelector('[data-behavior="spot-control"]').classList.add("is-active");
         // Change headline
-        showHeadline(nextId.replace('spot-', ''))
+        fadein(document.querySelector('h1 .fade-in'), index)
       }, delay);
 }

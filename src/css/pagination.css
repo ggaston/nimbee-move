@@ -25,7 +25,7 @@
 }
 
 .pagination-item:hover,
-.pagination-item.active {
+.pagination-item.is-active {
     background-color: var(--color-blue);
 }
 

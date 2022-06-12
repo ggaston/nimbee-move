@@ -7,7 +7,8 @@
 }
 
 .spot {
-  position: absolute;
+  display: block;
+  position: relative;
   width: 64px;
   height: 64px;
   cursor: pointer;
@@ -26,23 +27,23 @@
 }
 
 .spot:hover,
-.spot.active {
+.spot.is-active {
   z-index: var(--z-index-spot);
 }
 
 .spot-dot:hover,
-.spot.active .spot-dot {
-  -webkit-animation: none;
-  -moz-animation: none;
+.spot.is-active .spot-dot {
   animation: none;
   background-color: var(--color-white);
   color: var(--color-blue);
 }
 
+[data-behavior="spot"] {
+  position:absolute;
+}
+
 [data-mode~="spotlight"] .spot-dot,
-[data-mode~="hasPopper"] .spot-dot {
-  -webkit-animation: none;
-  -moz-animation: none;
+.has-open-spot .spot-dot {
   animation: none;
 }
 
@@ -55,7 +56,7 @@
 }
 
 .spot-dot:hover .spot-icon,
-.spot.active .spot-icon {
+.spot.is-active .spot-icon {
   filter: brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(645%)
     hue-rotate(165deg) brightness(95%) contrast(90%);
 }
@@ -64,6 +65,17 @@
   to {
     box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
   }
+}
+
+[data-behavior="spot-content"] {
+  position: absolute;
+  z-index: var(--z-index-popper);
+  top: -80px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  /* border: 2px solid #f00; */
+  overflow: hidden;
 }
 
 #spot-truck {
@@ -104,4 +116,67 @@
 #spot-request {
   left: 72%;
   bottom: 37%;
+}
+
+[data-behavior="spot"].is-active  [data-behavior="spot-control"]{
+  z-index: 2;
+}
+
+[data-behavior="spot-content"].is-animated {
+  animation: hidden 1s forwards;
+  overflow: visible;
+}
+[data-behavior="spot-content"].is-animated > .popper {
+  animation: slide-out 1s forwards;
+}
+
+[data-behavior="spot"].is-active > [data-behavior="spot-content"].is-animated {
+  animation: is-visible 1s forwards;
+}
+[data-behavior="spot"].is-active > [data-behavior="spot-content"].is-animated > .popper {
+  animation: slide-in 1s forwards;
+}
+
+@keyframes visible {
+  100% {
+      overflow: visible;
+  }
+}
+
+@keyframes hidden {
+  50% {
+      overflow: hidden
+  }
+  
+  100% {
+      overflow: hidden
+  }
+}
+
+@keyframes slide-in {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(-20px);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+      opacity: 1;
+      transform: translateY(-20px);
+  }
+
+  50% {
+      opacity: 0;
+      transform: translateY(-400px);
+  }
+
+  100% {
+      opacity: 0;
+      transform: translateY(0);
+  }
 }

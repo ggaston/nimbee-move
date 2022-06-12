@@ -247,6 +247,8 @@
 					let triggerEls = options.spotControls;
 					let activeEls = document.querySelectorAll("." + options.activeClassName);
 
+					console.log(evt.target.dataset)
+
 					// accept spot-control[-]
 					if (/spot-control/.test(evt.target.dataset.behavior) !== false) {
 						return;
