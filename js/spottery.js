@@ -109,7 +109,6 @@ const spottery = {
 		const spot = this.spotLookup(el);
 		const content = this.contentLookup(el);
 
-		console.log('content: ', content);
 		// Looking for 2 types of elements: 1. active spot and 2. active spot controls
 		let activeEls = document.querySelectorAll(
 			options.spotSelector +
@@ -150,11 +149,24 @@ const spottery = {
 			spot.classList.add(options.activeClassName);
 			el.classList.add(options.activeClassName);
 			this.current = current;
+            // Effects on H1 outside of pottery
+            fadein(document.querySelector('h1 .fade-in'), this.current);
+            this.higlightNavItem()
 		}
 
-		// Effects on H1 outside of pottery
-		fadein(document.querySelector('h1 .fade-in'), this.current);
 	},
+
+    // Update navigation/pagination active items
+    higlightNavItem: function(){
+        const options = this.options
+        const current = this.current
+        const currentId = options.spots[current].id;
+        const bindedEls = document.querySelectorAll(
+            options.spotControlSelector + '[data-bind="#' + currentId + '"]'
+        );
+
+        this.setActive(bindedEls);
+    },
 
 	spotLookup: function (el) {
 		const options = this.options;
@@ -213,11 +225,7 @@ const spottery = {
 		this.showSpotContent(null, control);
 
         // Update navigation/pagination active items
-        const currentId = options.spots[current].id;
-		const bindedEls = document.querySelectorAll(
-			options.spotControlSelector + '[data-bind="#' + currentId + '"]'
-		);
-		this.setActive(bindedEls);
+        this.higlightNavItem()
 
 		return current;
 	},
@@ -233,11 +241,7 @@ const spottery = {
 		this.showSpotContent(null, control);
 
         // Update navigation/pagination active items
-        const currentId = options.spots[current].id;
-		const bindedEls = document.querySelectorAll(
-			options.spotControlSelector + '[data-bind="#' + currentId + '"]'
-		);
-		this.setActive(bindedEls);
+        this.higlightNavItem()
 
 		return current;
 	},
