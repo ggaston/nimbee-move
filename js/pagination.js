@@ -104,16 +104,18 @@ let pagination = {
   },
 
   highlight: function (index) {
+    const current = nimbee.current
+
     if (this.current > -1 && this.current < this.pages.length) {
       console.log("highlight remove: " + index);
-      this.pages[this.current].parentNode.classList.remove("active");
+      this.pages[this.current].parentNode.classList.remove("is-active");
     }
 
     if (index > 0 || index === 0) {
       console.log("highlight: " + index);
-      this.pages[index].parentNode.classList.add("active");
+      this.pages[index].parentNode.classList.add("is-active");
     }
   },
 };
 
-const pages = pagination.init();
+const nimbee_pages = pagination.init();
