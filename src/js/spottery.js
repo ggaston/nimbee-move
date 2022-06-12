@@ -47,6 +47,20 @@ const spottery = {
 			});
 		}
 
+        // Bind arrow events
+        document.addEventListener('keydown', (e) => {
+            switch (e.code) {
+                // Left Key pressed!
+                case 'ArrowLeft':
+                    this.prev()
+                    break;
+                // Right Key pressed!
+                case 'ArrowRight':
+                    this.next()
+                    break;
+            }
+        }); 
+
 		// Update spot content positions. Prevent opening content outside of viewport. Tweak x position.
 		requestAnimationFrame(() => {
 			document.querySelector('.content h1').classList.add('is-animated');

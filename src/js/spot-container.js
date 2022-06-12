@@ -33,7 +33,7 @@ function spots() {
 
     //console.table(log)
 
-    //requestAnimationFrame(spots)
+    requestAnimationFrame(spots)
 }
 
 requestAnimationFrame(spots)
