@@ -10,7 +10,7 @@ spotlight
     "--spotlight-x": "34%",
     "--spotlight-y": "62%",
     duration: 1,
-    delay: 4,
+    delay: 6,
     onStart: () => {
       onStartEffects('spot-driver', 'spot-app', 500)
     },
@@ -19,7 +19,7 @@ spotlight
     "--spotlight-x": "50%",
     "--spotlight-y": "66%",
     duration: 1,
-    delay: 4,
+    delay: 6,
     onStart: () => {
       onStartEffects('spot-app', 'spot-battery', 500)
     },
@@ -28,7 +28,7 @@ spotlight
     "--spotlight-x": "44%",
     "--spotlight-y": "54%",
     duration: 1,
-    delay: 4,
+    delay: 6,
     onStart: () => {
       onStartEffects('spot-battery', 'spot-charging', 500)
     },
@@ -46,7 +46,7 @@ spotlight
     "--spotlight-x": "21%",
     "--spotlight-y": "62%",
     duration: 1,
-    delay: 4,
+    delay: 6,
     onStart: () => {
       onStartEffects('spot-request', 'spot-cargo', 500)
     },
@@ -55,7 +55,7 @@ spotlight
     "--spotlight-x": "8%",
     "--spotlight-y": "62%",
     duration: 1,
-    delay: 4,
+    delay: 6,
     onStart: () => {
       onStartEffects('spot-cargo', 'spot-truck', 500)
     },
@@ -64,7 +64,7 @@ spotlight
     "--spotlight-x": "74%",
     "--spotlight-y": "72%",
     duration: 1,
-    delay: 4,
+    delay: 6,
     onStart: () => {
       onStartEffects('spot-truck', 'spot-ev', 500)
     },
@@ -73,7 +73,7 @@ spotlight
     "--spotlight-x": "35%",
     "--spotlight-y": "72%",
     duration: 1,
-    delay: 4,
+    delay: 6,
     onStart: () => {
       onStartEffects('spot-ev', 'spot-driver', 500)
     },
@@ -82,6 +82,25 @@ spotlight
 
 window.addEventListener("mousemove", resetTimeout);
 window.addEventListener("click", resetTimeout);
+
+// Bind arrow events
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
+    switchToInteractive()
+  }
+})
+
+function switchToInteractive(){
+    nimbee_spots.clearActive()
+  
+    // Mark <html> data attribute about animation state
+    document.documentElement.dataset.mode = "interactive";
+  
+    spotlightEl.style.opacity = 0;
+  
+    spotlight.pause();
+    trackMouse();
+}
 
 function resetTimeout(e) {
     // Spotlight dismiss only once
@@ -92,17 +111,7 @@ function resetTimeout(e) {
 
       return;
     }
-  
-    const spotEls = document.querySelectorAll(".spot");
-    nimbee_spots.clearActive()
-  
-    // Mark <html> data attribute about animation state
-    document.documentElement.dataset.mode = "interactive";
-  
-    spotlightEl.style.opacity = 0;
-  
-    spotlight.pause();
-    trackMouse();
+    switchToInteractive()
   }
 
 function trackMouse() {
