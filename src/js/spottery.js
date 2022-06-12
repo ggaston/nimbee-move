@@ -8,7 +8,6 @@ const spottery = {
 			spotContentSelector: '[data-behavior="spot-content"]',
 			animateClassName: 'is-animated',
 			activeClassName: 'is-active',
-			spotNav: '',
 		};
 		//debugger
 		const options = (this.options = { ...defaults, ...opts });
@@ -153,7 +152,6 @@ const spottery = {
             fadein(document.querySelector('h1 .fade-in'), this.current);
             this.higlightNavItem()
 		}
-
 	},
 
     // Update navigation/pagination active items

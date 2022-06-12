@@ -32,7 +32,7 @@ body {
     width: var(--scene-size-x);
     height: var(--scene-size-y);
     transform: translate(calc(50vw - var(--scene-size-x)/2), calc(50vh - var(--scene-size-y)/2));
-    background-image: url("../assets/img/bg.jpg");
+    background-image: url("../assets/img/bg-progressive.jpg");
     background-repeat: no-repeat;
     background-position: 50% bottom;
     background-size: cover;
