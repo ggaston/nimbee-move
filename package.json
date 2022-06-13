@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build-css && npm run copy",
-    "build-css": "postcss  src/css/*.css --use autoprefixer -d dist/css/",
-    "copy": "cp src/*.html dist && cp -r src/js dist && cp -r src/assets dist",
+    "build": "npm run build-css && npm run minify-js && npm run copy",
+    "build-css": "postcss  src/css/*.css --no-map --use autoprefixer postcss-minify -d dist/css/",
+    "copy": "cp src/*.html dist && cp -r src/assets dist  && cp -r lib dist",
+    "minify-js": "./minify-js.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +24,8 @@
   "devDependencies": {
     "browserlist": "^1.0.1",
     "postcss": "^8.4.14",
-    "postcss-cli": "^9.1.0"
+    "postcss-cli": "^9.1.0",
+    "postcss-minify": "^1.1.0"
   },
   "browserslist": [
     "defaults",
