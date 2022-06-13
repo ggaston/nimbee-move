@@ -25,7 +25,8 @@
     "browserlist": "^1.0.1",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
-    "postcss-minify": "^1.1.0"
+    "postcss-minify": "^1.1.0",
+    "uglify-js": "^3.16.0"
   },
   "browserslist": [
     "defaults",
