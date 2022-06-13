@@ -88,7 +88,7 @@ const spottery = {
 	addAnimationClass: function (evt, targetControl) {
 		const options = this.options;
 		const target = evt ? evt.currentTarget : targetControl;
-		console.log(evt);
+		//console.log(evt);
 		const spot = target.closest(options.spotSelector);
 		const content = spot
 			? spot.querySelector(options.spotContentSelector)
@@ -258,7 +258,7 @@ const spottery = {
         document.getElementById('spot-container').classList.remove('has-open-spot')
 	},
 	setActive: function (els) {
-        console.log('setActive: ', els)
+        //console.log('setActive: ', els)
 		els.forEach((el) => {
 			el.classList.add(this.options.activeClassName);
 		});
