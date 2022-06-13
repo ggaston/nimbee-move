@@ -4,350 +4,739 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="css/aniloop.css" />
-		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<title>True operational efficiency driven by data</title>
 	</head>
 	<body>
-		<section class="container">
+		<div class="container">
+			<!-- header -->
+			<header class="header">
+				<img src="assets/img/nimbee-logo-horizontal.svg" alt="" class="header-logo" />
+				<h1 class="header-headline">True operational efficiency driven by data</h1>
+			</header>
+			<!-- /header -->
+
+			<div class="scene"></div>
+
+			<!-- static overlay -->
+			<div class="overlay" id="overlay"></div>
+			<!-- /static overlay -->
+
+			<!-- animated spotlight -->
+			<div class="spotlight" id="spotlight"></div>
+			<!-- /animated spotlight -->
+
+			<!-- spot-container emulates 'background-size: cover' behavior -->
 			<div class="spot-container" id="spot-container">
-				<div class="spot" data-behavior="spot" id="spot-1">
-					<div class="pop-trig" data-behavior="spot-control">a</div>
-					<div class="pop-cont" data-behavior="spot-content">
-						<div class="pop">Content 1</div>
+				<!-- ! ORDER OF SPOTs IS MEANINGFULL FOR NAVIGATION ! -->		
+				<!-- spot driver -->
+				<div data-behavior="spot" id="spot-driver">
+					<div
+						class="spot is-active"
+						data-behavior="spot-control"
+						data-target="popper-driver"
+					>
+						<div class="spot-dot">
+							<img src="assets/img/spot-driver.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-driver -->
+						<div class="popper" id="popper-driver">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-driver.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>Assigned driver arrives to the order location</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-checkmark.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>order number:
+											<span class="pill-light">NMB 2345821</span></span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-pin.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>location: Koppel 234, St. Georg</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-charge.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>order charge: 21 kWh</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-clock.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>charging finished by: 14:15</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-car.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>car: Tesla X, red, HH-OL 7687</span
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-driver -->
 					</div>
 				</div>
+				<!-- /spot driver -->
 
-				<div class="spot" data-behavior="spot" id="spot-2">
-					<div class="pop-trig" data-behavior="spot-control">B</div>
-					<div class="pop-cont" data-behavior="spot-content">
-						<div class="pop">Content 2</div>
+				<!-- spot app -->
+				<div data-behavior="spot" id="spot-app">
+					<div class="spot" data-behavior="spot-control" data-target="popper-app">
+						<div class="spot-dot">
+							<img src="assets/img/spot-app.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-app -->
+						<div class="popper" id="popper-app">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-app.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>Driver app enables the following actions</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-checkmark.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>confirm the delivery of a specific charging unit</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-wifi.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>open the car remotely (enabled only for a specific time
+											window)</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-charge.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>check the start of the charging process (starts
+											automatically)</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-minusmark.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>stop charging if necessary</span
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-app -->
 					</div>
 				</div>
+				<!-- /spot app -->
 
-				<div class="spot" data-behavior="spot" id="spot-3">
-					<div class="pop-trig" data-behavior="spot-control">C</div>
-					<div class="pop-cont" data-behavior="spot-content">
-						<div class="pop">Content 3</div>
+				<!-- spot battery -->
+				<div data-behavior="spot" id="spot-battery">
+					<div class="spot" data-behavior="spot-control" data-target="popper-battery">
+						<div class="spot-dot">
+							<img src="assets/img/spot-battery.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-battery -->
+						<div class="popper" id="popper-battery">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-battery.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>Unit pairs and starts charging automatically</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-car.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>identifies vehicle & executes digital handshake</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-battery.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>sets the charging curve based on the vehicle’s charging
+											profile and initial SoC</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-charge.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>charges kWh based on the SLA or an individual
+											order</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-spinner.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>monitors the process and specifies the estimated
+											charging completion</span
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-battery -->
 					</div>
 				</div>
+				<!-- /spot battery -->
+
+				<!-- spot charging -->
+				<div data-behavior="spot" id="spot-charging">
+					<div class="spot" data-behavior="spot-control" data-target="popper-charging">
+						<div class="spot-dot">
+							<img src="assets/img/spot-charging.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-charging -->
+						<div class="popper" id="popper-charging">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-charging.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>The car being charged is monitored every minute</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-battery.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>current SOC: 23 % → target: 44%</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-battery.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>current charging power: 46 kW</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-clock.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>charging finished by: 14:15</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-car.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text">car ready by: 14:25</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-charging -->
+					</div>
+				</div>
+				<!-- /spot charging -->
+
+				<!-- spot request -->
+				<div data-behavior="spot" id="spot-request">
+					<div class="spot" data-behavior="spot-control" data-target="popper-request">
+						<div class="spot-dot">
+							<img src="assets/img/spot-request.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-request -->
+						<div class="popper" id="popper-request">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-request.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>The car owner is at work but is kept informed</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-bell.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>before NimBee arrives and the moment of opening the
+											charging port</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-charge.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>monitoring of the charging progress</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-phone.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>option to call the driver if needed</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-bell.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>when charging done & car safely locked, link to
+											details</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-minusmark.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>stop charging if necessary</span
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-request -->
+					</div>
+				</div>
+				<!-- /spot request -->
+
+				<!-- spot cargo -->
+				<div data-behavior="spot" id="spot-cargo">
+					<div class="spot" data-behavior="spot-control" data-target="popper-cargo">
+						<div class="spot-dot">
+							<img src="assets/img/spot-cargo.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-cargo -->
+						<div class="popper" id="popper-cargo">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-cargo.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>Second charging unit is ready for the next charging
+										jobs</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-battery.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>current capacity: 54 kWh</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-checkmark.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>allocated to orders:
+											<span class="pill-light">NMB 230826</span>,
+											<span class="pill-light">NMB 230834</span></span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-clock.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>next job starts no later than: 14:05</span
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-cargo -->
+					</div>
+				</div>
+				<!-- /spot cargo -->
+
+				<!-- spot truck -->
+				<div data-behavior="spot" id="spot-truck">
+					<div class="spot" data-behavior="spot-control" data-target="popper-truck">
+						<div class="spot-dot">
+							<img src="assets/img/spot-truck.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-truck -->
+						<div class="popper" id="popper-truck">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-truck.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>eVan’s route and the next stop are real-time
+										optimized</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-warning.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>congestion ahead - 6 min delay</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-recalculate.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text">recalculating route</span>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-clock.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>next job starts no later than: 14:05</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-depot.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>next [Mittelweg depot] stop at: 15:20</span
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-truck -->
+					</div>
+				</div>
+				<!-- /spot truck -->
+
+				<!-- spot ev -->
+				<div data-behavior="spot" id="spot-ev">
+					<div class="spot" data-behavior="spot-control" data-target="popper-ev">
+						<div class="spot-dot">
+							<img src="assets/img/spot-ev.svg" alt="" class="spot-icon" />
+						</div>
+					</div>
+					<div data-behavior="spot-content">
+						<!-- popper-ev -->
+						<div class="popper" id="popper-ev">
+							<div class="popper-content">
+								<h4 class="popper-headline">
+									<img
+										src="assets/img/spot-ev.svg"
+										alt=""
+										class="popper-headline-icon"
+									/>
+									<span class="popper-headline-text"
+										>Car-sharing charging job predicted for tomorrow</span
+									>
+								</h4>
+								<ul class="popper-features">
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-parking.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>parking pattern detected</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-battery.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text">current SOC: 58%</span>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-clock.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>time slot: 10-10:30 am, probability 95%</span
+										>
+									</li>
+									<li class="popper-feature">
+										<img
+											src="assets/img/icon-order.svg"
+											alt=""
+											class="popper-feature-icon"
+										/>
+										<span class="popper-feature-text"
+											>pre-allocated order:
+											<span class="pill-light">NMB 230978</span></span
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /popper-ev -->
+					</div>
+				</div>
+				<!-- /spot ev -->
+
 			</div>
+			<!-- /spot-container -->
 
-			<div class="text-content">
-				<div data-behavior="spot-control-prev">prev</div>
-				<div data-behavior="spot-control" data-content='.spot:nth-child(1) [data-behavior="spot-content"]'>
-					A
-				</div>
-				<div data-behavior="spot-control" data-content='.spot:nth-child(2) [data-behavior="spot-content"]'>
-					B
-				</div>
-				<div data-behavior="spot-control" data-content='.spot:nth-child(3) [data-behavior="spot-content"]'>
-					C
-				</div>
-				<div data-behavior="spot-control-next">next</div>
+			<!-- map -->
+			<div class="map">
+				<div class="map-dot"></div>
+				<img src="assets/img/map.png" alt="" />
+			</div>
+			<!-- /map -->
 
-				<br>
-				<label>window.innerWidth</label
-				><input id="windowInnerWidth" readonly disabled /><br />
-				<label>window.innerHeight</label
-				><input id="windowInnerHeight" readonly disabled /><br />
-				<label>rect.x</label><input id="rectX" readonly disabled /><br />
-				<label>pos.x</label><input id="posX" readonly disabled /><br />
-				<label>offset x</label><input id="offsetX" readonly disabled /><br />
-
+			<!-- content -->
+			<main class="content">
 				<h1>
 					<span class="fade-in">
-						Hello world
+						A 3-minute pit stop action (aka charging setup) starts by placing the
+						charger next to the car</span>
+
+					<span>
+						The driver app is just a tool; the cloud-based core of the platform is the
+						real magic conductor
 					</span>
-					<span>I'm here</span>
-					<span>You are in</span>
+
+					<span>
+						Custom charging is automated and personalized to the highest level
+					</span>
+
+					<span>Charging process is strictly controlled through high-frequency and safe connection</span>
+
+					<span>Car owner is kept up to date, with safety and privacy secured</span>
+
+					<span>
+						Another job from this allocated current capacity will start within 15
+						minutes</span>
+
+					<span>NimBee eVans have real-time optimized routes</span>
+
+					<span>Charging of other cars in the area is planned based on a prediction
+						model</span>
+					
 				</h1>
-			</div>
-		</section>
 
+				<!-- /content -->
+				<!-- button -->
+				<!-- /button -->
+				<!-- pagination -->
+				<div class="pagination">
+					<div class="pagination-control control-prev" data-behavior="spot-control-prev">
+						<img src="assets/img/icon-btn-arrow-back.svg" alt="" />
+					</div>
+					<ul class="pagination-items">
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-driver'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-app'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-battery'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-charging'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-request'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-cargo'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-truck'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+						<li class="pagination-item" data-behavior="spot-control"
+						data-bind='#spot-ev'>
+							<a
+								href="#"
+								class="pagination-link"
+								
+							></a>
+						</li>
+					</ul>
+					<div class="pagination-control control-next" data-behavior="spot-control-next">
+						<img src="assets/img/icon-btn-arrow.svg" alt="" />
+					</div>
+				</div>
+				<!-- /pagination -->
+			</main>
+			<!-- /content-->
+		</div>
+
+		<script src="lib/js/gsap.min.js"></script>
+		<script src="js/spotlight.js"></script>
 		<script src="js/spot-container.js"></script>
-
-		<script>
-			const spottery = {
-				init: function (selector = '[data-behavior="spot"]', opts) {
-					const defaults = {
-						spotSelector: selector,
-						spotControlSelector: '[data-behavior="spot-control"]',
-						spotControlSelectorPrev: '[data-behavior="spot-control-prev"]',
-						spotControlSelectorNext: '[data-behavior="spot-control-next"]',
-						spotContentSelector: '[data-behavior="spot-content"]',
-						animateClassName: "is-animated",
-						activeClassName: "is-active",
-					};
-
-					const options = (this.options = { ...defaults, ...opts });
-
-					this.options.spots = document.querySelectorAll(options.spotSelector);
-					const spotContents = (this.options.spotContents = document.querySelectorAll(
-						options.spotContentSelector
-					));
-					const spotControls = (this.options.spotControls = document.querySelectorAll(
-						options.spotControlSelector
-					));
-
-					const spotControlsNext = (this.options.spotControlsNext =
-						document.querySelectorAll(options.spotControlSelectorNext));
-					const spotControlsPrev = (this.options.spotControlsPrev =
-						document.querySelectorAll(options.spotControlSelectorPrev));
-
-					// Bind clickout events
-					document.addEventListener("click", this.clickOut.bind(this));
-
-					// Bind spot events
-					spotControls.forEach((el) => {
-						//console.log('control: ', el)
-						//el.addEventListener("click", this.addAnimationClass.bind(this));
-						el.addEventListener("click", this.showSpotContent.bind(this));
-					});
-
-					if (spotControlsNext.length && spotControlsPrev.length) {
-						spotControlsNext.forEach((el) => {
-							el.addEventListener("click", this.next.bind(this));
-						});
-						spotControlsPrev.forEach((el) => {
-							el.addEventListener("click", this.prev.bind(this));
-						});
-					}
-
-					// Update spot content positions
-					requestAnimationFrame(() => {
-						spotContents.forEach((contentEl) => {
-							const el = contentEl.firstElementChild;
-							const rect = el.getBoundingClientRect();
-							const pos = {
-								x: rect.x - el.clientWidth / 2,
-							};
-							pos.y = rect.y;
-
-							const translateX =
-								pos.x > 0
-									? pos.x + el.clientWidth > window.innerWidth
-										? pos.x -
-										  rect.x +
-										  (window.innerWidth - (pos.x + el.clientWidth))
-										: pos.x - rect.x
-									: -pos.x - el.clientWidth / 2;
-
-							console.log(
-								el.clientHeight,
-								el.clientWidth,
-								pos.x + el.clientWidth,
-								window.innerWidth
-							);
-							console.log(translateX);
-
-							contentEl.style.transform = "translateX(" + translateX + "px)";
-
-							windowInnerWidth.value =
-								windowInnerWidth.value + window.innerWidth + ", ";
-							rectX.value = rectX.value + Math.round(rect.x) + ", ";
-							posX.value = posX.value + Math.round(pos.x) + ", ";
-							offsetX.value = offsetX.value + translateX + ", ";
-						});
-					});
-				},
-				current: -1,
-				// One time on page load.
-				// To prevent animations on load another class is required.
-				addAnimationClass: function (evt, targetControl) {
-					const options = this.options;
-					const target = evt ? evt.currentTarget : targetControl;
-					console.log(evt);
-					const spot = target.closest(options.spotSelector);
-					const content = spot
-						? spot.querySelector(options.spotContentSelector)
-						: this.contentLookup(target);
-
-					if (content) {
-						content.classList.add(options.animateClassName);
-						target.removeEventListener("click", this.addAnimationClass);
-					}
-				},
-
-				showSpotContent: function (evt, targetEl) {
-					const options = this.options;
-					const el = evt ? evt.currentTarget : targetEl;
-
-					// Find spot container element
-					const spot = this.spotLookup(el);
-
-					// Find content element
-					const content = this.contentLookup(spot);
-
-					let activeEls = document.querySelectorAll(
-						options.spotSelector +
-							"." +
-							options.activeClassName +
-							"," +
-							options.spotControlSelector +
-							"." +
-							options.activeClassName
-					);
-					// Find out if elemenet already has spot content visible
-					const notActive = spot.classList.contains(options.activeClassName)
-						? false
-						: true;
-					let current;
-					const spots = options.spots.entries();
-
-					for (item of spots) {
-						if (spot.isEqualNode(item[1])) {
-							current = item[0];
-						}
-					}
-
-					//Prepare animations
-					this.addAnimationClass(evt, targetEl);
-
-					// Switch all active spots to inactive state
-					activeEls.forEach((el) => {
-						el.classList.remove(options.activeClassName);
-					});
-
-					// Add active only if it is not active
-					if (notActive) {
-						spot.classList.add(options.activeClassName);
-						el.classList.add(options.activeClassName);
-						this.current = current;
-					}
-
-					// Effects on H1 outside of pottery
-					fadein(document.querySelector('h1 .fade-in'), this.current)
-				},
-
-				spotLookup: function (el) {
-					const options = this.options;
-					// Try to find parent spot element, otherwise return target element itself
-					let spot = el.closest(options.spotSelector);
-					const content = this.contentLookup(el);
-
-					if (content) {
-						spot = content.closest(options.spotSelector);
-					}
-
-					return spot;
-				},
-
-				contentLookup: function (el) {
-					const options = this.options;
-					let contentAttr = el.dataset.content;
-
-					const content = contentAttr
-						? document.querySelector(contentAttr)
-						: el.querySelector(options.spotContentSelector);
-					return content;
-				},
-
-				clickOut: function (evt) {
-					const options = this.options;
-					let triggerEls = options.spotControls;
-					let activeEls = document.querySelectorAll("." + options.activeClassName);
-
-					console.log(evt.target.dataset)
-
-					// accept spot-control[-]
-					if (/spot-control/.test(evt.target.dataset.behavior) !== false) {
-						return;
-					} else {
-						activeEls.forEach((el) => {
-							el.classList.remove(options.activeClassName);
-						});
-					}
-				},
-
-				next: function () {
-					const options = this.options;
-					const spots = options.spots;
-					const current = this.current;
-
-					this.current = spots.length - 1 > current ? current + 1 : 0;
-
-					const control = spots[this.current].querySelector(options.spotControlSelector);
-
-					this.showSpotContent(null, control);
-				},
-
-				prev: function () {
-					const options = this.options;
-					const spots = options.spots;
-					const current = this.current;
-
-					this.current = current < 1 ? spots.length - 1 : current - 1;
-
-					const control = spots[this.current].querySelector(options.spotControlSelector);
-
-					this.showSpotContent(null, control);
-				},
-			};
-
-			const spoter = Object.assign(spottery);
-			spoter.init();
-
-			function fadein(el, index) {
-				let els = el.parentNode.children
-				const foreach = Array.prototype.forEach;
-				console.log(els)
-		
-				foreach.call(els, (el) => {
-					el.classList.remove('fade-in')
-				})
-
-				els[index].classList.add('fade-in')
-			}
-
-			//spots.addAnimationClass(null, document.getElementById("spot-control-2"));
-			//spots.showSpotContent(null, document.getElementById("spot-control-2"));
-
-			// const triggers = document.querySelectorAll('.pop-trig')fvfv
-
-			// document.addEventListener('click', clickOut)
-			// triggers.forEach((el) => {
-			// 	el.addEventListener('click', addAnimationClass)
-			// 	el.addEventListener('click', showPopper)
-			// })
-
-			// // One time on page load.
-			// // To prevent animations on load another class is required.
-			// function addAnimationClass(e) {
-			// 	const target = e.currentTarget
-			// 	const spot = target.closest('.spot')
-
-			// 	const el = spot.querySelector('.pop-cont')
-			// 	el.classList.add('is-animated')
-			// 	target.removeEventListener('mouseover', addAnimationClass)
-			// }
-
-			// function showPopper(e) {
-			// 	let activeEls = document.querySelectorAll('.is-active')
-			// 	const notActive = e.currentTarget.classList.contains('is-active') ? false : true
-
-			// 	// Switch all active spots to inactive state
-			// 	activeEls.forEach((el) => {
-			// 		el.classList.remove('is-active')
-			// 	})
-
-			// 	// Skip if already active
-			// 	if (notActive) {
-			// 		e.target.classList.add('is-active')
-			// 	}
-			// }
-
-			// function clickOut(e) {
-			// 	let triggerEls = document.querySelectorAll('.pop-trig')
-			// 	let activeEls = document.querySelectorAll('.is-active')
-
-			// 	if(e.target.classList.contains('pop-trig')) {
-			// 		return
-			// 	} else {
-			// 		activeEls.forEach((el) => {
-			// 			el.classList.remove('is-active')
-			// 		})
-			// 	}
-			// }
-		</script>
+		<script src="js/spottery.js"></script>
 	</body>
 </html>
